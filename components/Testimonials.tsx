@@ -89,7 +89,7 @@ export default function Testimonials() {
         </h2>
 
         {/* Featured + side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mb-3.5 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start">
           {/* Big quote */}
           <div className="bg-ink rounded-xl p-14 relative overflow-hidden lg:row-span-2 reveal delay-1">
             <span
