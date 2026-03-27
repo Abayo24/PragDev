@@ -99,7 +99,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-wrap items-center justify-between gap-3.5 pt-9 border-t border-cream/[0.06] text-[0.78rem] text-cream/20">
-          <p>© 2025 PragDev Softwares Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PragDev Softwares Ltd. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="text-cream/20 hover:text-cream transition-colors duration-200">
               Privacy Policy
