@@ -9,46 +9,39 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    featured: true,
-    text: "PragDev took our vague idea and turned it into a product our users genuinely love. Their attention to both technical detail and user experience was extraordinary. We launched on time, on budget — something we never thought possible with our previous vendors.",
-    name: "Amara Mensah",
-    role: "CEO, PesaMate Fintech · Nairobi",
-    initials: "AM",
-    avatarClass: "bg-gradient-to-br from-orange to-[#FF7043]",
-  },
-  {
-    text: "Working with PragDev was a breath of fresh air. They asked the right questions, communicated clearly, and delivered a hospital system that's transformed how we serve patients. The team genuinely cares about outcomes, not just deliverables.",
-    name: "Dr. David Kimani",
-    role: "Medical Director, Afya Clinic Group",
-    initials: "DK",
+    text: "We needed a website that communicated trust and professionalism for women's reproductive health. The PragDev team delivered a beautiful, mobile-responsive site that perfectly captured our brand's premium feel and improved our user experience immensely.",
+    name: "Kieva",
+    role: "Co-Founder, Fertitude",
+    initials: "K",
     avatarClass: "bg-gradient-to-br from-lime to-[#65D000] text-ink",
   },
   {
-    text: "I've worked with many dev agencies. PragDev stands out because they think like product people. They challenged our assumptions, suggested better solutions, and built a marketplace our vendors rave about. Revenue doubled post-launch.",
-    name: "Fatima Okonkwo",
-    role: "Founder, ShopLocal Africa",
-    initials: "FO",
+    text: "Working with PragDev Softwares was a seamless experience. They completely refined our visual brand and created a structured, user-friendly website that has significantly strengthened our online presence in the sports industry.",
+    name: "Sophy",
+    role: "Co-Founder, Nia Dada",
+    initials: "S",
     avatarClass: "bg-gradient-to-br from-gold to-[#E8CC7A] text-ink",
   },
   {
-    text: "Our fleet management app was complex with a tight deadline. PragDev delivered a robust real-time tracking system our drivers use every day. The fuel savings covered the development cost within three months.",
-    name: "James Mwangi",
-    role: "COO, SwiftLogistics Kenya",
-    initials: "JM",
+    text: "Our digital wallet needed a serious UX overhaul. PragDev redesigned the ME4U app with a mobile-first approach, making the user journey incredibly intuitive. The checkout flow is now much faster and our SME users love it.",
+    name: "Kenny",
+    role: "Product Manager, ME4U",
+    initials: "Ke",
     avatarClass: "bg-gradient-to-br from-forest to-[#1a5c35]",
   },
   {
-    text: "We came with an idea sketched on a napkin. PragDev walked us through product strategy, built a beautiful UI, and launched our LMS with 10,000 learners in the first semester. Technical quality is genuinely world-class.",
-    name: "Zainab Adeyemi",
-    role: "Co-Founder, LearnHub Africa",
-    initials: "ZA",
+    featured: true,
+    text: "PragDev Softwares designed a high-converting website for our telehealth company that clearly explains our complex features. Their clean layout and strategic calls-to-action have directly increased our lead generation.",
+    name: "Ivy",
+    role: "Founder, Ivorris Care",
+    initials: "I",
     avatarClass: "bg-gradient-to-br from-[#6366f1] to-[#818cf8]",
   },
   {
-    text: "PragDev migrated our entire on-premise system to the cloud without a single hour of downtime. Infrastructure costs dropped 40% and the system is faster than ever. True technology partners.",
-    name: "Patrick Njoroge",
-    role: "IT Director, Retail Chain Group",
-    initials: "PN",
+    text: "We wanted a welcoming digital space for our congregation, and PragDev delivered exactly that. The new church website is accessible, easy to navigate for service schedules, and has really helped boost our community engagement.",
+    name: "Dr. Odeny",
+    role: "St. Stephen Church",
+    initials: "O",
     avatarClass: "bg-gradient-to-br from-[#475569] to-[#94a3b8]",
   },
 ];
@@ -133,7 +126,7 @@ export default function Testimonials() {
         </div>
 
         {/* Bottom row of 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
           {bottomRow.map((t, i) => (
             <div key={i} className={`reveal delay-${i + 1}`}>
               <SmallCard t={t} />
