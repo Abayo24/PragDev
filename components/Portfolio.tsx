@@ -60,6 +60,18 @@ const projects: Project[] = [
     colSpan: "lg:col-span-4",
   },
   {
+    tag: "Personal · Portfolio",
+    title: "Personal Portfolio",
+    desc: "A curated showcase of my web development and design work. Highlights modern frontend design principles, responsive grid layouts, and a focus on user experience.",
+    pills: [
+      { label: "Interactive UI", variant: "orange" },
+      { label: "Performant", variant: "lime" },
+    ],
+    emoji: "💻",
+    accentColor: "#A3FF00",
+    colSpan: "lg:col-span-4",
+  },
+  {
     tag: "Community · Web Design",
     title: "St. Stephen Church",
     desc: "A welcoming and accessible digital presence designed to foster community engagement. Features clear navigation for service schedules, events, and resources for the congregation.",
@@ -70,18 +82,6 @@ const projects: Project[] = [
     emoji: "⛪",
     accentColor: "rgba(242,237,227,0.25)",
     colSpan: "lg:col-span-6",
-  },
-  {
-    tag: "Personal · Portfolio",
-    title: "Abayo Akinyi — Dev Portfolio",
-    desc: "A curated showcase of my web development and design work. Highlights modern frontend design principles, responsive grid layouts, and a focus on user experience.",
-    pills: [
-      { label: "Interactive UI", variant: "orange" },
-      { label: "Performant", variant: "lime" },
-    ],
-    emoji: "💻",
-    accentColor: "#A3FF00",
-    colSpan: "lg:col-span-4",
   },
 ];
 
