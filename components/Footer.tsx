@@ -48,11 +48,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] gap-14 mb-14">
           {/* Brand */}
           <div>
-            <Link href="#" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-orange rounded-[7px] flex items-center justify-center text-[11px] font-mono font-extrabold text-white">
-                PD
-              </div>
-              <span className="font-display font-extrabold text-[1.4rem] tracking-tighter2 text-cream">
+            <Link href="#" className="flex items-center mb-4">
+              <div className='w-16 h-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105'>
+							<img
+								src='/pds-logo1.png'
+								alt='PragDev Logo'
+								className='object-contain'
+							/>
+						</div>
+              <span className="font-display font-extrabold text-[1.2rem] tracking-tighter2 text-cream">
                 PragDev Softwares
               </span>
             </Link>
