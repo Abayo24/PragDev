@@ -4,12 +4,12 @@ const footerCols = [
   {
     title: "Services",
     links: [
-      { label: "Custom Software", href: "#services" },
-      { label: "Web Development", href: "#services" },
-      { label: "Mobile Apps", href: "#services" },
-      { label: "UI/UX Design", href: "#services" },
-      { label: "Cloud Solutions", href: "#services" },
-      { label: "System Integration", href: "#services" },
+      { label: "Business Websites", href: "#services" },
+      { label: "Landing Pages", href: "#services" },
+      { label: "Website Redesign", href: "#services" },
+      { label: "Custom Web Applications", href: "#services" },
+      { label: "Website Maintenance", href: "#services" },
+      { label: "Technical SEO & Accessibility", href: "#services" },
     ],
   },
   {
@@ -26,7 +26,10 @@ const footerCols = [
   {
     title: "Contact",
     links: [
-      { label: "pragdev.softwares@gmail.com", href: "mailto:pragdev.softwares@gmail.com" },
+      {
+        label: "pragdev.softwares@gmail.com",
+        href: "mailto:pragdev.softwares@gmail.com",
+      },
       { label: "+254 769 622 996", href: "tel:+254769622996" },
       { label: "Nairobi, Kenya", href: "#" },
       { label: "East Africa", href: "#" },
