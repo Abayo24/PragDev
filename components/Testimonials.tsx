@@ -9,21 +9,21 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    text: "We needed a website that communicated trust and professionalism for women's reproductive health. The PragDev team delivered a beautiful, mobile-responsive site that perfectly captured our brand's premium feel and improved our user experience immensely.",
+    text: "PragDev built a professional website that reflects our brand and makes it easier for patients to learn about our services. The website is fast, mobile friendly, and has given us a stronger online presence.",
     name: "Kieva",
     role: "Co-Founder, Fertitude",
     initials: "K",
     avatarClass: "bg-gradient-to-br from-lime to-[#65D000] text-ink",
   },
   {
-    text: "Working with PragDev Softwares was a seamless experience. They completely refined our visual brand and created a structured, user-friendly website that has significantly strengthened our online presence in the sports industry.",
+    text: "Working with PragDev was smooth from start to finish. They redesigned our website into a modern, responsive platform that represents our organization well and makes information easier to find.",
     name: "Sophy",
     role: "Co-Founder, Nia Dada",
     initials: "S",
     avatarClass: "bg-gradient-to-br from-gold to-[#E8CC7A] text-ink",
   },
   {
-    text: "Our digital wallet needed a serious UX overhaul. PragDev redesigned the ME4U app with a mobile-first approach, making the user journey incredibly intuitive. The checkout flow is now much faster and our SME users love it.",
+    text: "PragDev redesigned our application with a cleaner interface and a better user experience. The result is a simpler product that's easier to navigate across mobile devices.",
     name: "Kenny",
     role: "Product Manager, ME4U",
     initials: "Ke",
@@ -31,14 +31,14 @@ const testimonials: Testimonial[] = [
   },
   {
     featured: true,
-    text: "PragDev Softwares designed a high-converting website for our telehealth company that clearly explains our complex features. Their clean layout and strategic calls-to-action have directly increased our lead generation.",
+    text: "PragDev created a modern website that communicates our services clearly and makes it easy for visitors to contact us. Their attention to design, performance, and user experience exceeded our expectations.",
     name: "Ivy",
     role: "Founder, Ivorris Care",
     initials: "I",
     avatarClass: "bg-gradient-to-br from-[#6366f1] to-[#818cf8]",
   },
   {
-    text: "We wanted a welcoming digital space for our congregation, and PragDev delivered exactly that. The new church website is accessible, easy to navigate for service schedules, and has really helped boost our community engagement.",
+    text: "Our new website is clean, accessible, and simple to navigate. Members and visitors can quickly find service times, events, and announcements from any device.",
     name: "Dr. Odeny",
     role: "St. Stephen Church",
     initials: "O",
@@ -75,7 +75,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 bg-cream overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-10">
         <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5 reveal">
-          Client Voices
+          Client Testimonials
         </span>
         <h2
           className="font-display font-extrabold tracking-tighter2 leading-[0.95] mb-[72px] reveal delay-1"
@@ -84,7 +84,7 @@ export default function Testimonials() {
           Trusted by
           <br />
           <em className="not-italic font-light text-ink-muted">
-            builders & founders
+            growing businesses
           </em>
         </h2>
 
