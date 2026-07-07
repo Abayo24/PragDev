@@ -1,14 +1,14 @@
 const items = [
-  "Custom Software",
-  "Web Development",
-  "Mobile Apps",
-  "UI/UX Design",
-  "Cloud Solutions",
-  "System Integration",
-  "React & Next.js",
-  "React Native",
-  "AWS & GCP",
-  "M-Pesa Integration",
+  "Get More Leads",
+  "Reach More Customers",
+  "Fast Loading Websites",
+  "SEO Ready",
+  "Accessible Design",
+  "Responsive on Every Device",
+  "Professional Business Websites",
+  "Built for Growth",
+  "Easy to Manage",
+  "Trusted by Startups",
 ];
 
 export default function Ticker() {
