@@ -1,60 +1,70 @@
 const services = [
-	{
-		num: '01',
-		name: 'Custom Software Development',
-		desc: "Stop forcing your business into off-the-shelf tools that don't fit. We architect bespoke software matching your exact workflows, scaling with your growth, and giving you a competitive advantage competitors can't easily replicate.",
-		tags: [
-			'Bespoke Architecture',
-			'Scalable Systems',
-			'Clean Code',
-			'API Development',
-		],
-	},
-	{
-		num: '02',
-		name: 'Web Application Development',
-		desc: "Lightning-fast, SEO-optimised web apps built with React, Next.js, and Node.js. Whether it's a SaaS platform, e-commerce solution, or internal portal — we build web products that convert visitors into loyal, paying customers.",
-		tags: ['Next.js / React', 'Node.js', 'SEO-Ready', 'SaaS Platforms'],
-	},
-	{
-		num: '03',
-		name: 'Mobile App Development',
-		desc: 'Native iOS & Android, or cross-platform with React Native and Flutter. We deliver polished mobile experiences that keep users engaged and drive real business outcomes — not just downloads that get deleted in a week.',
-		tags: [
-			'React Native',
-			'Flutter',
-			'iOS & Android',
-			'M-Pesa Integration',
-		],
-	},
-	{
-		num: '04',
-		name: 'UI/UX Design',
-		desc: 'Great design is the difference between software people love and software they abandon. Intuitive, visually striking interfaces grounded in user research — because better UX directly translates to higher retention and more revenue.',
-		tags: [
-			'Figma Prototypes',
-			'User Research',
-			'Design Systems',
-			'Usability Testing',
-		],
-	},
-	{
-		num: '05',
-		name: 'Cloud Solutions',
-		desc: 'Deploy with confidence. We architect, migrate, and manage cloud infrastructure on AWS, GCP, and Azure — ensuring your product is secure, highly available, and ready to handle sudden traffic spikes without breaking a sweat.',
-		tags: [
-			'AWS / GCP / Azure',
-			'DevOps & CI/CD',
-			'Containerisation',
-			'Zero-Downtime',
-		],
-	},
-	{
-		num: '06',
-		name: 'System Integration',
-		desc: 'Siloed systems cost you time and money. We connect your CRM, ERP, payment gateways, and third-party APIs into one seamless data flow — so your team works smarter and customers experience zero friction at every touchpoint.',
-		tags: ['API Integration', 'ERP / CRM', 'Data Pipelines', 'Automation'],
-	},
+  {
+    num: "01",
+    name: "Business Website Development",
+    desc: "Professional websites built to help your business earn trust, attract customers, and generate enquiries. Every website is fast, responsive, SEO-ready, and built with accessibility in mind.",
+    tags: [
+      "Responsive Design",
+      "SEO Ready",
+      "Accessibility",
+      "Fast Performance",
+    ],
+  },
+  {
+    num: "02",
+    name: "Landing Pages",
+    desc: "High-converting landing pages for product launches, marketing campaigns, and lead generation. Designed to turn visitors into customers with clear messaging and strong calls to action.",
+    tags: [
+      "Lead Generation",
+      "Conversion Focused",
+      "Marketing Campaigns",
+      "Analytics",
+    ],
+  },
+  {
+    num: "03",
+    name: "Website Redesign",
+    desc: "Transform outdated websites into modern digital experiences with improved speed, mobile responsiveness, accessibility, and search engine visibility.",
+    tags: [
+      "Modern UI",
+      "Mobile First",
+      "Performance",
+      "SEO Improvements",
+    ],
+  },
+  {
+    num: "04",
+    name: "Custom Web Applications",
+    desc: "Need more than a website? We build secure web applications tailored to your business, from client portals and booking systems to internal dashboards and business tools.",
+    tags: [
+      "React",
+      "Next.js",
+      "Business Systems",
+      "Secure Applications",
+    ],
+  },
+  {
+    num: "05",
+    name: "Website Maintenance & Support",
+    desc: "Keep your website secure, updated, and performing at its best with ongoing maintenance, backups, performance monitoring, and technical support.",
+    tags: [
+      "Security Updates",
+      "Backups",
+      "Performance Monitoring",
+      "Technical Support",
+    ],
+  },
+  {
+    num: "06",
+    name: "Technical SEO & Accessibility",
+    desc: "Improve your website's visibility and usability with technical SEO, semantic HTML, accessibility best practices, structured data, and Core Web Vitals optimization.",
+    tags: [
+      "Technical SEO",
+      "Core Web Vitals",
+      "WCAG",
+      "Structured Data",
+    ],
+  },
 ];
 
 export default function Services() {
@@ -77,7 +87,7 @@ export default function Services() {
 				<div className='flex justify-between items-end mb-[72px] gap-10 flex-wrap'>
 					<div className='reveal'>
 						<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5'>
-							What We Build
+							What We Offer
 						</span>
 						<h2
 							className='font-display font-extrabold leading-[0.95] tracking-tighter2 text-cream'
