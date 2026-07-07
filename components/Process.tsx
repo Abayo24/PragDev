@@ -1,10 +1,34 @@
 const steps = [
-  { num: "01", name: "Discovery", desc: "Deep-dive into goals, users, and constraints. Define exactly what to build and why." },
-  { num: "02", name: "Design", desc: "Wireframes, user flows, high-fidelity prototypes reviewed before a single line of code." },
-  { num: "03", name: "Develop", desc: "Agile sprints with weekly demos. Clean, documented code with CI/CD from day one." },
-  { num: "04", name: "Test", desc: "Automated QA, performance testing, security audits, and cross-device checks throughout." },
-  { num: "05", name: "Launch", desc: "Zero-downtime deployment with monitoring in place. We handle every detail of go-live." },
-  { num: "06", name: "Support", desc: "Ongoing maintenance, feature iterations, and a dedicated support channel for your team." },
+  {
+    num: "01",
+    name: "Discovery",
+    desc: "We learn about your business, goals, audience, and competitors to create a website that supports your growth.",
+  },
+  {
+    num: "02",
+    name: "Strategy & Design",
+    desc: "We plan your website structure, content, and user experience before designing responsive, accessible layouts.",
+  },
+  {
+    num: "03",
+    name: "Development",
+    desc: "Your website is built with modern technologies, clean code, fast performance, technical SEO, and accessibility best practices.",
+  },
+  {
+    num: "04",
+    name: "Review & Testing",
+    desc: "Every page is tested across devices, browsers, and screen sizes to ensure speed, usability, and a reliable experience.",
+  },
+  {
+    num: "05",
+    name: "Launch",
+    desc: "We deploy your website, connect your domain, set up analytics, and make sure everything is ready for your customers.",
+  },
+  {
+    num: "06",
+    name: "Support & Growth",
+    desc: "After launch, we provide updates, maintenance, performance improvements, and ongoing support as your business grows.",
+  },
 ];
 
 export default function Process() {
