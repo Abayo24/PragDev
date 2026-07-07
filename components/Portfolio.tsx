@@ -12,24 +12,24 @@ interface Project {
 
 const projects: Project[] = [
   {
-    tag: "HealthTech · Web Design",
+    tag: "Healthcare • Business Website",
     title: "Fertitude",
-    desc: "Premium, modern website centered on women's reproductive health. Features a clean layout, mobile-first design, and optimized contact structures to build brand trust and credibility.",
+    desc: "A modern healthcare website designed to build trust, improve accessibility, and make it easier for patients to learn about services and get in touch.",
     pills: [
-      { label: "Premium UI/UX", variant: "lime" },
-      { label: "Mobile Responsive", variant: "orange" },
+      { label: "SEO Ready", variant: "lime" },
+      { label: "Accessible", variant: "orange" },
     ],
     emoji: "🌸",
     accentColor: "#E8400C",
     colSpan: "lg:col-span-7",
   },
   {
-    tag: "HealthTech · Landing Page",
+    tag: "Healthcare • Landing Page",
     title: "Ivorris Care",
-    desc: "Conversion-optimized landing page for a telehealth company. Designed to clearly communicate complex features and drive user inquiries and lead generation.",
+    desc: "A conversion-focused landing page built to explain services clearly, improve user experience, and encourage more enquiries through WhatsApp.",
     pills: [
       { label: "Lead Generation", variant: "lime" },
-      { label: "Clean Layout", variant: "orange" },
+      { label: "Fast Loading", variant: "orange" },
     ],
     emoji: "🏥",
     accentColor: "#E8400C",
@@ -48,36 +48,36 @@ const projects: Project[] = [
     colSpan: "lg:col-span-5",
   },
   {
-    tag: "Fintech · UI/UX Design",
-    title: "ME4U — App Redesign",
-    desc: "Mobile-first digital wallet interface designed for East African SMEs. Focused on creating an intuitive user journey with seamless M-Pesa integration, resulting in a significantly faster checkout flow.",
+    tag: "Fintech • UI/UX Design",
+    title: "ME4U",
+    desc: "A modern mobile wallet interface designed to simplify everyday financial tasks with a clean layout and intuitive navigation.",
     pills: [
-      { label: "Intuitive UX", variant: "lime" },
-      { label: "40% faster checkout", variant: "orange" },
+      { label: "Mobile First", variant: "lime" },
+      { label: "UI/UX Design", variant: "orange" },
     ],
     emoji: "💳",
     accentColor: "#E8400C",
     colSpan: "lg:col-span-4",
   },
   {
-    tag: "Personal · Portfolio",
-    title: "Personal Portfolio",
-    desc: "A curated showcase of my web development and design work. Highlights modern frontend design principles, responsive grid layouts, and a focus on user experience.",
+    tag: "Portfolio Website",
+    title: "Developer Portfolio",
+    desc: "A modern portfolio showcasing frontend development, responsive layouts, accessibility best practices, and high-performance web design.",
     pills: [
-      { label: "Interactive UI", variant: "orange" },
-      { label: "Performant", variant: "lime" },
+      { label: "Next.js", variant: "orange" },
+      { label: "Performance", variant: "lime" },
     ],
     emoji: "💻",
     accentColor: "#A3FF00",
     colSpan: "lg:col-span-4",
   },
   {
-    tag: "Community · Web Design",
+    tag: "Church • Community Website",
     title: "St. Stephen Church",
-    desc: "A welcoming and accessible digital presence designed to foster community engagement. Features clear navigation for service schedules, events, and resources for the congregation.",
+    desc: "An accessible website that helps visitors find service times, events, ministries, and important announcements across all devices.",
     pills: [
-      { label: "Community Focused", variant: "orange" },
       { label: "Accessible", variant: "lime" },
+      { label: "Community Focused", variant: "orange" },
     ],
     emoji: "⛪",
     accentColor: "rgba(242,237,227,0.25)",
@@ -93,20 +93,21 @@ export default function Portfolio() {
         <div className="flex items-end justify-between mb-14 flex-wrap gap-5 reveal">
           <div>
             <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-4">
-              Selected Work
+              Recent Projects
             </span>
             <h2
               className="font-display font-extrabold tracking-tighter2 leading-[0.95]"
               style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
             >
-              Products built.
+              Websites that
               <br />
-              <em className="not-italic font-light">Problems solved.</em>
+              <em className="not-italic font-light">help businesses grow.</em>
             </h2>
           </div>
           <p className="max-w-[280px] text-[0.88rem] text-ink-muted font-light leading-[1.7]">
-            Real projects, real impact — from fintech to healthtech, logistics to
-            e-commerce.
+            Every project is designed to load fast, rank better in search
+            engines, provide an accessible experience, and turn visitors into
+            customers.
           </p>
         </div>
 
@@ -162,18 +163,18 @@ export default function Portfolio() {
             <div className="flex items-center justify-center h-full min-h-[240px] p-8 text-center">
               <div>
                 <p className="font-display text-[4rem] font-black tracking-tightest text-orange leading-none mb-3">
-                  50+
+                  Your
                 </p>
                 <p className="font-display text-[1.05rem] font-bold text-cream/65 mb-5">
-                  Projects delivered across
+                  business could be
                   <br />
-                  12+ industries
+                  our next success story.
                 </p>
                 <Link
-                  href='https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you.'
+                  href="https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you."
                   className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-orange text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#c73400] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)]"
                 >
-                  Start Your Project ↗
+                  Book a Free Consultation ↗
                 </Link>
               </div>
             </div>
