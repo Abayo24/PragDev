@@ -1,26 +1,26 @@
 import Link from 'next/link';
 
 const features = [
-	{
-		num: '01',
-		title: 'Clean, Scalable Architecture',
-		desc: 'We write code your future team can maintain and extend. Well-structured, documented, production-grade software that grows with your business and never becomes a liability.',
-	},
-	{
-		num: '02',
-		title: 'User-First Design Thinking',
-		desc: 'Every decision starts with your end user in mind. We design products that feel effortless — because better UX translates directly to higher retention and more revenue.',
-	},
-	{
-		num: '03',
-		title: 'Fast, Predictable Delivery',
-		desc: "Focused sprints, clear milestones, weekly demos. You always know what's being built, when it ships, and what comes next. No surprises, no scope creep, no excuses.",
-	},
-	{
-		num: '04',
-		title: 'Reliable Post-Launch Support',
-		desc: "We don't disappear after go-live. Our support packages keep your product at peak performance — monitoring, updates, and a team that's always just a message away.",
-	},
+  {
+    num: "01",
+    title: "Fast Websites That Perform",
+    desc: "Every website is optimized for speed, mobile devices, and Core Web Vitals to improve user experience and search engine rankings.",
+  },
+  {
+    num: "02",
+    title: "SEO & Accessibility Built In",
+    desc: "We build with semantic HTML, accessibility best practices, and technical SEO from day one so your website reaches more people.",
+  },
+  {
+    num: "03",
+    title: "Designed Around Your Business",
+    desc: "Your website is built around your goals, whether that's generating leads, selling products, booking appointments, or building credibility.",
+  },
+  {
+    num: "04",
+    title: "Support After Launch",
+    desc: "We continue to help after your website goes live with updates, maintenance, performance improvements, and technical support whenever you need it.",
+  },
 ];
 
 const ctaLinks = [
