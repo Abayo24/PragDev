@@ -69,7 +69,7 @@ export default function Nav() {
           {/* CTA */}
           <div className="hidden md:block">
             <Link
-              href="https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you."
+              href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
               className="bg-ink text-cream text-sm font-semibold px-6 py-[11px] rounded-lg tracking-[-0.02em] transition-all duration-200 hover:bg-orange hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
               Book a Free Consultation <span>↗</span>

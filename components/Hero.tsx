@@ -56,7 +56,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap gap-3.5 items-center">
               <Link
-                href="https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you."
+                href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
                 className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-orange text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#c73400] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)] tracking-[-0.01em]"
               >
                 Start Your Website ↗
