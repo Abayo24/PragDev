@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Top bar - Moved inside normal flow so it naturally pushes content down */}
         <div className="flex items-center justify-between w-full">
           <span className="hidden md:flex font-mono text-[0.7rem] tracking-[0.15em] uppercase text-cream/65">
-            Website & App Development Studio • Nairobi, Kenya & Remote
+            Website & App Developers • Nairobi • Kenya • Africa
           </span>
           <div className="flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.1em] uppercase text-cream/65">
             <span className="w-2 h-2 rounded-full bg-lime shadow-[0_0_10px_#A3FF00] animate-blink" />

@@ -3,16 +3,19 @@ import type { Faq } from "./faqs";
 export interface ServicePage {
   slug: string;
   name: string;
+  shortName?: string;
   metaTitle: string;
   metaDescription: string;
   eyebrow: string;
   h1: string;
   answer: string;
   whatsappMessage: string;
+  areaServed?: { type: string; name: string };
   includedHeading: string;
   included: { title: string; desc: string }[];
   audienceHeading: string;
   audience: string[];
+  sections?: { heading: string; paragraphs: string[] }[];
   work?: { name: string; desc: string }[];
   testimonialName?: string;
   faqs: Faq[];
@@ -22,13 +25,13 @@ export const servicePages: ServicePage[] = [
   {
     slug: "website-development",
     name: "Website Development",
-    metaTitle: "Website Developers in Nairobi, Kenya",
+    metaTitle: "Business Website Design & Development Services",
     metaDescription:
-      "PragDev is a website development company in Nairobi, Kenya, building fast, mobile-friendly, SEO-ready business websites. Book a free consultation.",
-    eyebrow: "Website Development • Nairobi, Kenya & Remote",
-    h1: "Website developers in Nairobi, Kenya",
+      "Business websites, landing pages, redesigns and technical SEO from PragDev. Fast, mobile-friendly websites built to win customers. Book a free consultation.",
+    eyebrow: "Website Design & Development Services",
+    h1: "Business website design and development",
     answer:
-      "PragDev Softwares is a website development company in Nairobi, Kenya. We design and build fast, mobile-friendly, SEO-ready websites that help startups and growing businesses earn trust, attract customers and generate enquiries.",
+      "PragDev Softwares designs and builds business websites, landing pages and website redesigns. Every site is fast, mobile-friendly and SEO-ready, helping startups and growing businesses earn trust, attract customers and generate enquiries.",
     whatsappMessage:
       "Hi PragDev! I found your website and I'd like to discuss a website for my business.",
     includedHeading: "What does website development with PragDev include?",

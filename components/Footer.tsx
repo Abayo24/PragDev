@@ -15,6 +15,14 @@ const footerCols: {
     ],
   },
   {
+    title: "Locations",
+    links: [
+      { label: "Website Developer Nairobi", href: "/website-developer-nairobi" },
+      { label: "Website Developer Kenya", href: "/website-developer-kenya" },
+      { label: "Website Developer Africa", href: "/website-developer-africa" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { label: "About Us", href: "/#about" },
@@ -47,7 +55,7 @@ export default function Footer() {
     <footer className="bg-ink-2 border-t border-cream/[0.06] pt-[72px] pb-9">
       <div className="max-w-[1240px] mx-auto px-10">
         {/* Top grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] gap-14 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.1fr] gap-10 mb-14">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center mb-4">

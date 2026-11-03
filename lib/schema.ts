@@ -27,9 +27,11 @@ export function organizationSchema() {
     areaServed: [
       { "@type": "Country", name: site.country },
       { "@type": "AdministrativeArea", name: "East Africa" },
+      { "@type": "Continent", name: "Africa" },
     ],
     knowsAbout: [
       "Website development",
+      "Web design",
       "Mobile app development",
       "Web application development",
       "UI/UX design",
@@ -83,20 +85,21 @@ export function faqSchema(faqs: Faq[]) {
   };
 }
 
-export function serviceSchema(service: ServicePage) {
+export function serviceSchema(service: ServicePage, path: string) {
+  const area = service.areaServed ?? { type: "Country", name: site.country };
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.name,
     serviceType: service.name,
     description: service.answer,
-    url: `${SITE_URL}/services/${service.slug}`,
+    url: `${SITE_URL}${path}`,
     provider: { "@id": ORG_ID },
-    areaServed: { "@type": "Country", name: site.country },
+    areaServed: { "@type": area.type, name: area.name },
   };
 }
 
-export function breadcrumbSchema(service: ServicePage) {
+export function breadcrumbSchema(service: ServicePage, path: string) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -106,7 +109,7 @@ export function breadcrumbSchema(service: ServicePage) {
         "@type": "ListItem",
         position: 2,
         name: service.name,
-        item: `${SITE_URL}/services/${service.slug}`,
+        item: `${SITE_URL}${path}`,
       },
     ],
   };

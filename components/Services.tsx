@@ -187,6 +187,23 @@ export default function Services() {
 						</div>
 					))}
 				</div>
+
+				{/* Where we work */}
+				<p className='relative z-10 mt-12 text-[0.95rem] font-light text-cream/75 leading-[1.8] max-w-[760px]'>
+					Based in Nairobi and working remotely, PragDev is a{' '}
+					<Link href='/website-developer-nairobi' className='text-cream underline underline-offset-4 hover:text-orange'>
+						website developer in Nairobi
+					</Link>
+					, a{' '}
+					<Link href='/website-developer-kenya' className='text-cream underline underline-offset-4 hover:text-orange'>
+						website developer in Kenya
+					</Link>{' '}
+					and a{' '}
+					<Link href='/website-developer-africa' className='text-cream underline underline-offset-4 hover:text-orange'>
+						website developer for businesses across Africa
+					</Link>
+					.
+				</p>
 			</div>
 		</section>
 	);

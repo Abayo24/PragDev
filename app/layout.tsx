@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | PragDev",
   },
   description:
-    "PragDev Softwares is a Nairobi website and app development company building fast, SEO-ready websites, web apps and mobile apps. Book a free consultation.",
+    "PragDev is a website and app developer in Nairobi, serving Kenya and Africa with fast, SEO-ready websites, web apps and mobile apps. Book a free consultation.",
   applicationName: site.name,
   openGraph: {
     title: "Website & App Developers in Nairobi, Kenya | PragDev",

@@ -1,4 +1,5 @@
 import { homeFaqs } from "@/lib/faqs";
+import { locationPages } from "@/lib/locations";
 import { servicePages } from "@/lib/services";
 import { SITE_URL, site } from "@/lib/site";
 
@@ -13,6 +14,11 @@ export function GET() {
     "## Services",
     ...servicePages.map(
       (s) => `- [${s.name}](${SITE_URL}/services/${s.slug}): ${s.metaDescription}`
+    ),
+    "",
+    "## Where we work",
+    ...locationPages.map(
+      (l) => `- [${l.name}](${SITE_URL}/${l.slug}): ${l.metaDescription}`
     ),
     "",
     "## Frequently asked questions",

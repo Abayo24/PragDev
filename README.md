@@ -97,6 +97,7 @@ pragdev/
 - **Domain** → set `NEXT_PUBLIC_SITE_URL` in production (defaults to `https://pragdev.vercel.app`). Canonicals, the sitemap and structured data all use it.
 - **Business facts** → `lib/site.ts`
 - **Service pages** → `lib/services.ts` (each entry becomes `/services/<slug>`)
+- **Location pages** → `lib/locations.ts` (each entry becomes `/<slug>`; keep their content genuinely different)
 - **Homepage FAQs** → `lib/faqs.ts`
 - **After content changes** → update `CONTENT_UPDATED` in `lib/site.ts`
 

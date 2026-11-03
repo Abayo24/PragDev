@@ -11,9 +11,9 @@ export const homeFaqs: Faq[] = [
     answer: `${site.summary} We also handle website redesigns, landing pages, technical SEO, accessibility and ongoing maintenance.`,
   },
   {
-    question: "Where is PragDev based, and do you work with clients outside Kenya?",
+    question: "Where is PragDev based, and do you work with clients outside Nairobi?",
     answer:
-      "PragDev is based in Nairobi, Kenya, and works with clients in Kenya and remotely with businesses in other countries.",
+      "PragDev is based in Nairobi, Kenya. We work remotely with businesses across Kenya, elsewhere in Africa and internationally.",
   },
   {
     question: "Do you build mobile apps as well as websites?",
