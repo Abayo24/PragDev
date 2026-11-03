@@ -20,10 +20,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1240px] mx-auto w-full flex flex-col h-full flex-1">
         {/* Top bar - Moved inside normal flow so it naturally pushes content down */}
         <div className="flex items-center justify-between w-full">
-          <span className="hidden md:flex font-mono text-[0.7rem] tracking-[0.15em] uppercase text-cream/40">
-            Web Development Studio • Kenya & Remote
+          <span className="hidden md:flex font-mono text-[0.7rem] tracking-[0.15em] uppercase text-cream/65">
+            Website & App Development Studio • Nairobi, Kenya & Remote
           </span>
-          <div className="flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.1em] uppercase text-cream/55">
+          <div className="flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.1em] uppercase text-cream/65">
             <span className="w-2 h-2 rounded-full bg-lime shadow-[0_0_10px_#A3FF00] animate-blink" />
             Accepting new projects
           </div>
@@ -31,35 +31,35 @@ export default function Hero() {
 
         {/* Content - Pushed to the bottom using mt-auto */}
         <div className="mt-auto pt-10">
-          {/* <p className="font-mono text-[0.72rem] tracking-[0.15em] uppercase text-cream/40 mb-7 flex items-center gap-4">
+          {/* <p className="font-mono text-[0.72rem] tracking-[0.15em] uppercase text-cream/65 mb-7 flex items-center gap-4">
             <span className="w-10 h-px bg-cream/20 block" />
             Est. 2025 &mdash; 
           </p> */}
 
           <h1
             className="font-display font-extrabold leading-[0.92] tracking-tighter2 text-cream mb-12"
-            style={{ fontSize: "clamp(3.8rem, 8.5vw, 9rem)" }}
+            style={{ fontSize: "clamp(3rem, 6.8vw, 7.4rem)" }}
           >
-            Websites that
+            Website &amp; app
             <br />
-            <em className="not-italic font-light text-orange">Win</em> Customers
+            <em className="not-italic font-light text-orange">developers</em> in Nairobi.
             <br />
             <span className="text-lime">Built right.</span>
           </h1>
 
           <div className="flex flex-wrap items-start justify-between gap-10">
-            <p className="text-[1.05rem] font-light text-cream/50 max-w-[420px] leading-[1.75]">
-              PragDev builds fast, SEO-ready, accessible websites for startups
-              and growing businesses. Every project is optimized for
-              performance, mobile devices, and search engines to help you
-              attract more customers and grow online.
+            <p className="text-[1.05rem] font-light text-cream/65 max-w-[420px] leading-[1.75]">
+              PragDev Softwares is a website and app development company in
+              Nairobi, Kenya. We build fast, SEO-ready websites, web applications
+              and mobile apps that help startups and growing businesses win more
+              customers.
             </p>
             <div className="flex flex-wrap gap-3.5 items-center">
               <Link
-                href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
-                className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-orange text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#c73400] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)] tracking-[-0.01em]"
+                href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20project%20for%20my%20business."
+                className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-[#c73400] text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#a82c00] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)] tracking-[-0.01em]"
               >
-                Start Your Website ↗
+                Start Your Project ↗
               </Link>
               <Link
                 href="#portfolio"
@@ -74,7 +74,7 @@ export default function Hero() {
 
       {/* Scroll hint - pinned to bottom edge */}
       <p
-        className="hidden md:block absolute bottom-12 right-10 z-10 font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/28"
+        className="hidden md:block absolute bottom-12 right-10 z-10 font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/65"
         style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
       >
         Scroll to explore

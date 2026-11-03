@@ -4,12 +4,12 @@ import Link from 'next/link';
 import Image from "next/image";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Projects" },
-  { href: "#process", label: "Process" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#portfolio", label: "Projects" },
+  { href: "/#process", label: "Process" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -34,13 +34,13 @@ export default function Nav() {
         <div className="flex items-center justify-between h-[72px] w-full max-w-[1240px] mx-auto">
           {/* Logo */}
           <Link
-            href="#hero"
+            href="/"
             className="flex items-center gap-2.5 no-underline group"
           >
             <div className="w-24 h-auto px-3 py-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo.png"
-                alt="PragDev logo"
+                alt="PragDev Softwares logo"
                 width={120}
                 height={40}
                 priority
@@ -57,8 +57,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  /* Note: You might want to change text-ink-muted to text-cream/70 if your Hero background is dark */
-                  className="text-sm font-medium text-ink-muted hover:text-ink hover:bg-cream-2 px-4 py-2 rounded-[7px] transition-all duration-200 tracking-[-0.01em]"
+                  className={`text-sm font-medium ${scrolled ? "text-ink-muted" : "text-cream/80"} hover:text-ink hover:bg-cream-2 px-4 py-2 rounded-[7px] transition-all duration-200 tracking-[-0.01em]`}
                 >
                   {l.label}
                 </Link>
@@ -69,7 +68,7 @@ export default function Nav() {
           {/* CTA */}
           <div className="hidden md:block">
             <Link
-              href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
+              href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20project%20for%20my%20business."
               className="bg-ink text-cream text-sm font-semibold px-6 py-[11px] rounded-lg tracking-[-0.02em] transition-all duration-200 hover:bg-orange hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
               Book a Free Consultation <span>↗</span>
@@ -104,9 +103,9 @@ export default function Nav() {
             key={l.href}
             href={l.href}
             onClick={() => setOpen(false)}
-            className={`font-display text-[2rem] font-bold text-ink hover:text-orange py-3 border-b border-ink/10 tracking-tighter2 transition-colors duration-200 ${l.href === "#contact" ? "text-orange" : ""}`}
+            className={`font-display text-[2rem] font-bold text-ink hover:text-orange py-3 border-b border-ink/10 tracking-tighter2 transition-colors duration-200 ${l.href === "/#contact" ? "text-orange" : ""}`}
           >
-            {l.label} {l.href === "#contact" ? "↗" : ""}
+            {l.label} {l.href === "/#contact" ? "↗" : ""}
           </Link>
         ))}
       </div>

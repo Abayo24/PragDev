@@ -9,6 +9,8 @@ export default function Cursor() {
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
@@ -19,12 +21,10 @@ export default function Cursor() {
       ring.current.y += (mouse.current.y - ring.current.y) * 0.12;
 
       if (dotRef.current) {
-        dotRef.current.style.left = `${mouse.current.x}px`;
-        dotRef.current.style.top = `${mouse.current.y}px`;
+        dotRef.current.style.transform = `translate3d(${mouse.current.x}px, ${mouse.current.y}px, 0) translate(-50%, -50%)`;
       }
       if (ringRef.current) {
-        ringRef.current.style.left = `${ring.current.x}px`;
-        ringRef.current.style.top = `${ring.current.y}px`;
+        ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) translate(-50%, -50%)`;
       }
       rafRef.current = requestAnimationFrame(animate);
     };
@@ -32,26 +32,29 @@ export default function Cursor() {
 
     /* Hover effects */
     const onEnter = () => {
-      dotRef.current?.classList.add("scale-0");
+      dotRef.current?.classList.add("opacity-0");
       ringRef.current?.classList.add("!w-[60px]", "!h-[60px]", "!border-orange", "!bg-orange/5");
     };
     const onLeave = () => {
-      dotRef.current?.classList.remove("scale-0");
+      dotRef.current?.classList.remove("opacity-0");
       ringRef.current?.classList.remove("!w-[60px]", "!h-[60px]", "!border-orange", "!bg-orange/5");
     };
-    const interactives = document.querySelectorAll("a, button, [role='button']");
-    interactives.forEach((el) => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-    });
+    // Delegated so links on pages reached by client-side navigation also respond.
+    const selector = "a, button, [role='button'], summary";
+    const onOver = (e: MouseEvent) => {
+      if ((e.target as Element).closest?.(selector)) onEnter();
+    };
+    const onOut = (e: MouseEvent) => {
+      if ((e.target as Element).closest?.(selector)) onLeave();
+    };
+    document.addEventListener("mouseover", onOver);
+    document.addEventListener("mouseout", onOut);
 
     return () => {
       document.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(rafRef.current);
-      interactives.forEach((el) => {
-        el.removeEventListener("mouseenter", onEnter);
-        el.removeEventListener("mouseleave", onLeave);
-      });
+      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseout", onOut);
     };
   }, []);
 
@@ -60,14 +63,14 @@ export default function Cursor() {
       {/* Dot */}
       <div
         ref={dotRef}
-        className="fixed z-[10000] w-3 h-3 bg-orange rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 mix-blend-multiply"
-        style={{ willChange: "left, top" }}
+        className="hidden [@media(pointer:fine)]:block fixed top-0 left-0 z-[10000] w-3 h-3 bg-orange rounded-full pointer-events-none transition-opacity duration-200 mix-blend-multiply"
+        style={{ willChange: "transform" }}
       />
       {/* Ring */}
       <div
         ref={ringRef}
-        className="fixed z-[9999] w-10 h-10 border border-ink rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-[width,height,border-color,background] duration-300"
-        style={{ willChange: "left, top" }}
+        className="hidden [@media(pointer:fine)]:block fixed top-0 left-0 z-[9999] w-10 h-10 border border-ink rounded-full pointer-events-none transition-[width,height,border-color,background] duration-300"
+        style={{ willChange: "transform" }}
       />
     </>
   );

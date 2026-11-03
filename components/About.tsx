@@ -50,6 +50,8 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // The server HTML keeps the real number for crawlers; only the animation starts at 0.
+    el.textContent = "0";
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true;
@@ -73,7 +75,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
   return (
     <span className="font-display text-[2.8rem] font-black tracking-tightest leading-none counter-num">
-      <span ref={ref}>0</span>
+      <span ref={ref}>{value}</span>
       <span className="text-orange">{suffix}</span>
     </span>
   );
@@ -95,7 +97,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Left */}
           <div className="reveal delay-1">
-            <div className="flex items-center gap-3 font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-7 after:content-[''] after:flex-1 after:h-px after:bg-cream-3">
+            <div className="flex items-center gap-3 font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-7 after:content-[''] after:flex-1 after:h-px after:bg-cream-3">
               Our Story
             </div>
 
@@ -103,23 +105,23 @@ export default function About() {
               className="font-display font-bold tracking-tighter3 leading-[1.12] mb-7"
               style={{ fontSize: "clamp(1.8rem, 3.2vw, 3rem)" }}
             >
-              We build websites that help{" "}
+              We build websites and apps that help{" "}
               <em className="not-italic font-light text-ink-muted">
                 businesses grow online
               </em>
             </h2>
 
             <p className="text-ink-muted font-light leading-[1.85] mb-5">
-              PragDev helps startups and growing businesses build a strong
-              online presence through fast, modern websites. We focus on
-              performance, accessibility, SEO, and user experience so your
-              website works for every visitor and supports your business goals.
+              PragDev Softwares is a Nairobi-based website and app development
+              company. We help startups and growing businesses succeed online
+              with fast, modern websites, web applications and mobile apps,
+              focusing on performance, accessibility, SEO and user experience.
             </p>
             <p className="text-ink-muted font-light leading-[1.85]">
               Every project is built with clean code, responsive design, and
               long-term maintainability in mind. Whether you're launching a new
-              business, refreshing an outdated website, or creating a landing
-              page for your next product, we build digital experiences that
+              business, refreshing an outdated website, or building an app for
+              your next product, we build digital experiences that
               inspire confidence and convert visitors into customers.
             </p>
 
@@ -169,7 +171,7 @@ export default function About() {
                         ? "bg-lime/12 text-lime border-lime/20"
                         : i === 1
                           ? "bg-orange/15 text-[#ff7043] border-orange/25"
-                          : "bg-cream/6 text-cream/50 border-cream/10"
+                          : "bg-cream/6 text-cream/65 border-cream/10"
                     }`}
                   >
                     {tag}
@@ -177,8 +179,8 @@ export default function About() {
                 ))}
               </div>
               <p className="font-display text-[1.2rem] italic font-light text-cream/65 leading-[1.5] relative z-10">
-                "Fast, accessible, SEO-ready websites built to help businesses
-                grow."
+                "Fast, accessible, SEO-ready websites and apps built to help
+                businesses grow."
               </p>
             </div>
 

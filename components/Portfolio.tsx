@@ -92,16 +92,16 @@ export default function Portfolio() {
         {/* Header */}
         <div className="flex items-end justify-between mb-14 flex-wrap gap-5 reveal">
           <div>
-            <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-4">
+            <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-4">
               Recent Projects
             </span>
             <h2
               className="font-display font-extrabold tracking-tighter2 leading-[0.95]"
               style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
             >
-              Websites that
+              Website &amp; app projects
               <br />
-              <em className="not-italic font-light">help businesses grow.</em>
+              <em className="not-italic font-light">that help businesses grow.</em>
             </h2>
           </div>
           <p className="max-w-[280px] text-[0.88rem] text-ink-muted font-light leading-[1.7]">
@@ -116,7 +116,7 @@ export default function Portfolio() {
           {projects.map((p, i) => (
             <div
               key={i}
-              className={`bento-card ${p.colSpan} rounded-xl overflow-hidden bg-ink-2 text-cream/40 transition-transform duration-300 relative reveal delay-${(i % 3) + 1}`}
+              className={`bento-card ${p.colSpan} rounded-xl overflow-hidden bg-ink-2 text-cream/65 transition-transform duration-300 relative reveal delay-${(i % 3) + 1}`}
               style={{ minHeight: 240 }}
             >
               {/* Accent bar */}
@@ -125,11 +125,11 @@ export default function Portfolio() {
                 style={{ background: p.accentColor }}
               />
               {/* Emoji bg */}
-              <div className="absolute inset-0 flex items-center justify-center text-[6rem] opacity-[0.08] select-none pointer-events-none">
+              <div aria-hidden className="absolute inset-0 flex items-center justify-center text-[6rem] opacity-[0.08] select-none pointer-events-none">
                 {p.emoji}
               </div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-end">
-                <p className="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-cream/35 mb-3">
+                <p className="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-cream/65 mb-3">
                   {p.tag}
                 </p>
                 <h3
@@ -137,7 +137,7 @@ export default function Portfolio() {
                 >
                   {p.title}
                 </h3>
-                <p className="text-[0.82rem] text-cream/44 font-light leading-[1.65] mb-4">
+                <p className="text-[0.82rem] text-cream/65 font-light leading-[1.65] mb-4">
                   {p.desc}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
@@ -172,7 +172,7 @@ export default function Portfolio() {
                 </p>
                 <Link
                   href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20website%20for%20my%20business."
-                  className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-orange text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#c73400] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)]"
+                  className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-[#c73400] text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#a82c00] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)]"
                 >
                   Book a Free Consultation ↗
                 </Link>

@@ -36,7 +36,7 @@ export default function WhyUs() {
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-[100px] items-center'>
 					{/* Left */}
 					<div className='reveal'>
-						<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5'>
+						<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-5'>
 							Why PragDev
 						</span>
 						<h2

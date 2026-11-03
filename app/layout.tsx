@@ -1,37 +1,47 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit, JetBrains_Mono } from "next/font/google";
+import Cursor from "@/components/Cursor";
+import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import Nav from "@/components/Nav";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { SITE_URL, site } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
-  weight: ["300", "400", "600", "700", "800", "900"],
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "PragDev Softwares — Custom Software Development Company Kenya",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Website & App Developers in Nairobi, Kenya | PragDev",
+    template: "%s | PragDev",
+  },
   description:
-    "PragDev Softwares builds world-class custom software, web apps, mobile products and cloud solutions for startups and businesses across Kenya and Africa.",
-  keywords:
-    "software development company Kenya, custom software Kenya, web development Nairobi, mobile app development, UI UX design Kenya",
+    "PragDev Softwares is a Nairobi website and app development company building fast, SEO-ready websites, web apps and mobile apps. Book a free consultation.",
+  applicationName: site.name,
   openGraph: {
-    title: "PragDev Softwares — Custom Software Development",
-    description:
-      "Building scalable, elegant software for startups and businesses across Africa and beyond.",
+    title: "Website & App Developers in Nairobi, Kenya | PragDev",
+    description: site.summary,
+    url: "/",
+    siteName: site.name,
+    locale: "en_KE",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({
@@ -42,7 +52,16 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body bg-cream text-ink antialiased overflow-x-hidden`}
       >
+        <noscript>
+          <style>{`.reveal{opacity:1;transform:none}*{cursor:auto!important}`}</style>
+        </noscript>
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
+        <Cursor />
+        <Nav />
         {children}
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

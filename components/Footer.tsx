@@ -1,26 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const footerCols = [
+const footerCols: {
+  title: string;
+  links: { label: string; href?: string }[];
+}[] = [
   {
     title: "Services",
     links: [
-      { label: "Business Websites", href: "#services" },
-      { label: "Landing Pages", href: "#services" },
-      { label: "Website Redesign", href: "#services" },
-      { label: "Custom Web Applications", href: "#services" },
-      { label: "Website Maintenance", href: "#services" },
-      { label: "Technical SEO & Accessibility", href: "#services" },
+      { label: "Website Development", href: "/services/website-development" },
+      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      { label: "Web App Development", href: "/services/web-app-development" },
+      { label: "All Services", href: "/#services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "#about" },
-      { label: "Portfolio", href: "#portfolio" },
-      { label: "Our Process", href: "#process" },
-      { label: "Testimonials", href: "#testimonials" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
+      { label: "About Us", href: "/#about" },
+      { label: "Portfolio", href: "/#portfolio" },
+      { label: "Our Process", href: "/#process" },
+      { label: "Testimonials", href: "/#testimonials" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
@@ -31,15 +32,13 @@ const footerCols = [
         href: "mailto:pragdev.softwares@gmail.com",
       },
       { label: "+254 769 622 996", href: "tel:+254769622996" },
-      { label: "Nairobi, Kenya", href: "#" },
-      { label: "East Africa", href: "#" },
+      { label: "Nairobi, Kenya" },
+      { label: "East Africa" },
     ],
   },
 ];
 
 const socials = [
-  { label: "LinkedIn", title: "LinkedIn", href: "#" },
-  { label: "𝕏", title: "Twitter/X", href: "#" },
   { label: "WhatsApp", title: "WhatsApp", href: 'https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you.' },
 ];
 
@@ -51,11 +50,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1fr] gap-14 mb-14">
           {/* Brand */}
           <div>
-            <Link href="#" className="flex items-center mb-4">
+            <Link href="/" className="flex items-center mb-4">
               <div className='w-16 h-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105'>
-							<img
+							<Image
 								src='/pds-logo1.png'
-								alt='PragDev Logo'
+								alt='PragDev Softwares logo'
+								width={64}
+								height={64}
 								className='object-contain'
 							/>
 						</div>
@@ -63,10 +64,10 @@ export default function Footer() {
                 PragDev Softwares
               </span>
             </Link>
-            <p className="text-[0.88rem] text-cream/40 font-light leading-[1.75] max-w-[260px]">
-              Building scalable, elegant software for startups and businesses
-              across Africa and beyond. Nairobi-based, globally minded,
-              outcome-obsessed.
+            <p className="text-[0.88rem] text-cream/70 font-light leading-[1.75] max-w-[260px]">
+              Website and app development company in Nairobi, Kenya, building
+              fast, SEO-ready websites, web applications and mobile apps for
+              startups and growing businesses.
             </p>
             <div className="flex gap-2.5 mt-6">
               {socials.map((s) => (
@@ -74,7 +75,7 @@ export default function Footer() {
                   key={s.title}
                   href={s.href}
                   title={s.title}
-                  className="px-3 py-2 rounded-[8px] bg-cream/5 border border-cream/8 flex items-center justify-center text-cream/40 text-[0.82rem] transition-all duration-200 hover:bg-orange hover:border-orange hover:text-white"
+                  className="px-3 py-2 rounded-[8px] bg-cream/5 border border-cream/8 flex items-center justify-center text-cream/75 text-[0.82rem] transition-all duration-200 hover:bg-orange hover:border-orange hover:text-white"
                 >
                   {s.label}
                 </Link>
@@ -85,18 +86,24 @@ export default function Footer() {
           {/* Columns */}
           {footerCols.map((col) => (
             <div key={col.title}>
-              <h4 className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/20 mb-5">
+              <h2 className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/60 mb-5">
                 {col.title}
-              </h4>
+              </h2>
               <ul className="flex flex-col gap-[11px] list-none">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link
-                      href={l.href}
-                      className="text-[0.88rem] text-cream/40 font-light hover:text-cream transition-colors duration-200"
-                    >
-                      {l.label}
-                    </Link>
+                    {l.href ? (
+                      <Link
+                        href={l.href}
+                        className="text-[0.88rem] text-cream/70 font-light hover:text-cream transition-colors duration-200"
+                      >
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <span className="text-[0.88rem] text-cream/70 font-light">
+                        {l.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -105,16 +112,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-wrap items-center justify-between gap-3.5 pt-9 border-t border-cream/[0.06] text-[0.78rem] text-cream/20">
+        <div className="flex flex-wrap items-center justify-between gap-3.5 pt-9 border-t border-cream/[0.06] text-[0.78rem] text-cream/60">
           <p>© {new Date().getFullYear()} PragDev Softwares Ltd. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-cream/20 hover:text-cream transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-cream/20 hover:text-cream transition-colors duration-200">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

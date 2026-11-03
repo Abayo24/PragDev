@@ -2,27 +2,27 @@ const steps = [
   {
     num: "01",
     name: "Discovery",
-    desc: "We learn about your business, goals, audience, and competitors to create a website that supports your growth.",
+    desc: "We learn about your business, goals, audience, and competitors to plan a website or app that supports your growth.",
   },
   {
     num: "02",
     name: "Strategy & Design",
-    desc: "We plan your website structure, content, and user experience before designing responsive, accessible layouts.",
+    desc: "We plan your structure, content, and user experience before designing responsive, accessible layouts.",
   },
   {
     num: "03",
     name: "Development",
-    desc: "Your website is built with modern technologies, clean code, fast performance, technical SEO, and accessibility best practices.",
+    desc: "Your website or app is built with modern technologies, clean code, fast performance, technical SEO, and accessibility best practices.",
   },
   {
     num: "04",
     name: "Review & Testing",
-    desc: "Every page is tested across devices, browsers, and screen sizes to ensure speed, usability, and a reliable experience.",
+    desc: "Every screen is tested across devices, browsers, and screen sizes to ensure speed, usability, and a reliable experience.",
   },
   {
     num: "05",
     name: "Launch",
-    desc: "We deploy your website, connect your domain, set up analytics, and make sure everything is ready for your customers.",
+    desc: "We deploy your project, set up analytics, and make sure everything is ready for your customers.",
   },
   {
     num: "06",
@@ -41,7 +41,7 @@ export default function Process() {
         {/* Header */}
         <div className="text-center mb-[88px]">
           <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-lime mb-5 reveal">
-            Our Process
+            Our Website &amp; App Development Process
           </span>
           <h2
             className="font-display font-extrabold tracking-tighter2 text-cream leading-[0.95] reveal delay-1"
@@ -49,7 +49,7 @@ export default function Process() {
           >
             From idea to launch —
             <br />
-            <em className="not-italic font-light text-cream/38">and beyond</em>
+            <em className="not-italic font-light text-cream/65">and beyond</em>
           </h2>
         </div>
 
@@ -69,7 +69,7 @@ export default function Process() {
               <h3 className="font-display text-[0.95rem] font-bold text-cream tracking-[-0.02em] mb-2.5">
                 {s.name}
               </h3>
-              <p className="text-[0.78rem] text-cream/40 font-light leading-[1.65]">
+              <p className="text-[0.78rem] text-cream/65 font-light leading-[1.65]">
                 {s.desc}
               </p>
             </div>

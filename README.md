@@ -44,7 +44,6 @@ pragdev/
 │   └── page.tsx           # Home page — assembles all sections
 ├── components/
 │   ├── Cursor.tsx         # Custom magnetic cursor
-│   ├── Loader.tsx         # Animated loading screen
 │   ├── Nav.tsx            # Sticky nav + mobile hamburger
 │   ├── Hero.tsx           # Full-screen hero section
 │   ├── Ticker.tsx         # Orange scrolling tech ticker
@@ -90,6 +89,16 @@ pragdev/
 - **Services** → `components/Services.tsx` — edit the `services` array
 - **Colors** → `tailwind.config.ts` → `theme.extend.colors`
 - **Fonts** → `app/layout.tsx` — swap `next/font/google` imports
+
+---
+
+## 🔎 SEO
+
+- **Domain** → set `NEXT_PUBLIC_SITE_URL` in production (defaults to `https://pragdev.vercel.app`). Canonicals, the sitemap and structured data all use it.
+- **Business facts** → `lib/site.ts`
+- **Service pages** → `lib/services.ts` (each entry becomes `/services/<slug>`)
+- **Homepage FAQs** → `lib/faqs.ts`
+- **After content changes** → update `CONTENT_UPDATED` in `lib/site.ts`
 
 ---
 

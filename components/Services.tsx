@@ -1,7 +1,16 @@
-const services = [
+import Link from "next/link";
+
+const services: {
+  num: string;
+  name: string;
+  href?: string;
+  desc: string;
+  tags: string[];
+}[] = [
   {
     num: "01",
     name: "Business Website Development",
+    href: "/services/website-development",
     desc: "Professional websites built to help your business earn trust, attract customers, and generate enquiries. Every website is fast, responsive, SEO-ready, and built with accessibility in mind.",
     tags: [
       "Responsive Design",
@@ -12,6 +21,30 @@ const services = [
   },
   {
     num: "02",
+    name: "Mobile App Development",
+    href: "/services/mobile-app-development",
+    desc: "Mobile apps planned, designed and built around your customers, from the first version of a startup idea to the redesign of an existing product. Every app is built to be simple to use and reliable.",
+    tags: [
+      "Mobile First",
+      "UI/UX Design",
+      "Startups",
+      "App Redesign",
+    ],
+  },
+  {
+    num: "03",
+    name: "Custom Web Applications",
+    href: "/services/web-app-development",
+    desc: "Need more than a website? We build secure web applications tailored to your business, from client portals and booking systems to internal dashboards and business tools.",
+    tags: [
+      "React",
+      "Next.js",
+      "Business Systems",
+      "Secure Applications",
+    ],
+  },
+  {
+    num: "04",
     name: "Landing Pages",
     desc: "High-converting landing pages for product launches, marketing campaigns, and lead generation. Designed to turn visitors into customers with clear messaging and strong calls to action.",
     tags: [
@@ -22,7 +55,7 @@ const services = [
     ],
   },
   {
-    num: "03",
+    num: "05",
     name: "Website Redesign",
     desc: "Transform outdated websites into modern digital experiences with improved speed, mobile responsiveness, accessibility, and search engine visibility.",
     tags: [
@@ -33,18 +66,7 @@ const services = [
     ],
   },
   {
-    num: "04",
-    name: "Custom Web Applications",
-    desc: "Need more than a website? We build secure web applications tailored to your business, from client portals and booking systems to internal dashboards and business tools.",
-    tags: [
-      "React",
-      "Next.js",
-      "Business Systems",
-      "Secure Applications",
-    ],
-  },
-  {
-    num: "05",
+    num: "06",
     name: "Website Maintenance & Support",
     desc: "Keep your website secure, updated, and performing at its best with ongoing maintenance, backups, performance monitoring, and technical support.",
     tags: [
@@ -55,7 +77,7 @@ const services = [
     ],
   },
   {
-    num: "06",
+    num: "07",
     name: "Technical SEO & Accessibility",
     desc: "Improve your website's visibility and usability with technical SEO, semantic HTML, accessibility best practices, structured data, and Core Web Vitals optimization.",
     tags: [
@@ -79,7 +101,7 @@ export default function Services() {
 				style={{ fontSize: '28vw' }}
 				aria-hidden
 			>
-				06
+				07
 			</span>
 
 			<div className='max-w-[1240px] mx-auto px-10'>
@@ -93,23 +115,24 @@ export default function Services() {
 							className='font-display font-extrabold leading-[0.95] tracking-tighter2 text-cream'
 							style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)' }}
 						>
-							Services
+							Website &amp; app
 							<br />
-							<em className='not-italic font-light text-cream/40'>
-								engineered
+							<em className='not-italic font-light text-cream/65'>
+								development
 							</em>
 							<br />
-							for impact
+							services
 						</h2>
 					</div>
-					<p className='reveal delay-2 max-w-[300px] text-[0.9rem] font-light text-cream/40 leading-[1.7] pb-2'>
-						From concept to production — every layer of modern
-						digital product development, done right.
+					<p className='reveal delay-2 max-w-[300px] text-[0.9rem] font-light text-cream/65 leading-[1.7] pb-2'>
+						From business websites to mobile apps and custom web
+						applications, built in Nairobi for clients in Kenya
+						and beyond.
 					</p>
 				</div>
 
 				{/* List */}
-				<div className='border-t border-cream/10 text-cream/40'>
+				<div className='border-t border-cream/10 text-cream/65'>
 					{services.map((svc, i) => (
 						<div
 							key={svc.num}
@@ -119,7 +142,7 @@ export default function Services() {
 							<div className='absolute inset-0 bg-orange/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none' />
 
 							{/* Number */}
-							<span className='svc-num font-mono text-[0.72rem] tracking-[0.12em] text-cream/22 md:pt-1.5 transition-colors duration-300 group-hover:text-orange relative z-10'>
+							<span className='svc-num font-mono text-[0.72rem] tracking-[0.12em] text-cream/65 md:pt-1.5 transition-colors duration-300 group-hover:text-orange relative z-10'>
 								{svc.num}
 							</span>
 
@@ -132,16 +155,25 @@ export default function Services() {
 											'clamp(1.4rem, 2.8vw, 2.4rem)',
 									}}
 								>
-									{svc.name}
+									{svc.href ? (
+										<Link
+											href={svc.href}
+											className='hover:text-orange transition-colors duration-200'
+										>
+											{svc.name}
+										</Link>
+									) : (
+										svc.name
+									)}
 								</h3>
-								<p className='text-[0.9rem] font-light text-cream/42 leading-[1.7] max-w-[520px]'>
+								<p className='text-[0.9rem] font-light text-cream/65 leading-[1.7] max-w-[520px]'>
 									{svc.desc}
 								</p>
 								<div className='flex flex-wrap gap-2 mt-4'>
 									{svc.tags.map((tag) => (
 										<span
 											key={tag}
-											className='font-mono text-[0.65rem] tracking-[0.08em] px-3 py-1 rounded-full border border-cream/10 text-cream/32'
+											className='font-mono text-[0.65rem] tracking-[0.08em] px-3 py-1 rounded-full border border-cream/10 text-cream/65'
 										>
 											{tag}
 										</span>

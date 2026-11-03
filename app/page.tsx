@@ -1,6 +1,4 @@
-import Cursor from "@/components/Cursor";
-import Loader from "@/components/Loader";
-import Nav from "@/components/Nav";
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
 import About from "@/components/About";
@@ -9,18 +7,22 @@ import WhyUs from "@/components/WhyUs";
 import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd from "@/components/JsonLd";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
+import { homeFaqs } from "@/lib/faqs";
+import { faqSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
     <ScrollRevealProvider>
-      <Cursor />
-      <Loader />
-      <Nav />
+      <JsonLd data={faqSchema(homeFaqs)} />
       <main>
         <Hero />
         <Ticker />
@@ -30,12 +32,10 @@ export default function Home() {
         <Portfolio />
         <Process />
         <Testimonials />
+        <FAQ faqs={homeFaqs} />
         <CTA />
         <Contact />
       </main>
-      <Footer />
-
-      <WhatsAppButton />
     </ScrollRevealProvider>
   );
 }

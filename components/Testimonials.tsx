@@ -7,7 +7,7 @@ interface Testimonial {
   featured?: boolean;
 }
 
-const testimonials: Testimonial[] = [
+export const testimonials: Testimonial[] = [
   {
     text: "PragDev built a professional website that reflects our brand and makes it easier for patients to learn about our services. The website is fast, mobile friendly, and has given us a stronger online presence.",
     name: "Kieva",
@@ -74,7 +74,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 bg-cream overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-10">
-        <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5 reveal">
+        <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-5 reveal">
           Client Testimonials
         </span>
         <h2
@@ -112,7 +112,7 @@ export default function Testimonials() {
               </div>
               <div>
                 <p className="font-display text-[0.92rem] font-bold text-cream">{featured.name}</p>
-                <p className="text-[0.78rem] text-cream/40">{featured.role}</p>
+                <p className="text-[0.78rem] text-cream/65">{featured.role}</p>
               </div>
             </div>
           </div>
