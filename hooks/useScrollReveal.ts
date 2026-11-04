@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 export function useScrollReveal() {
   useEffect(() => {
+    document.documentElement.classList.add("reveal-ready");
+
     const els = document.querySelectorAll<HTMLElement>(".reveal");
 
     const observer = new IntersectionObserver(
