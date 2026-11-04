@@ -16,20 +16,6 @@ export const testimonials: Testimonial[] = [
     avatarClass: "bg-gradient-to-br from-lime to-[#65D000] text-ink",
   },
   {
-    text: "Working with PragDev was smooth from start to finish. They redesigned our website into a modern, responsive platform that represents our organization well and makes information easier to find.",
-    name: "Sophy",
-    role: "Co-Founder, Nia Dada",
-    initials: "S",
-    avatarClass: "bg-gradient-to-br from-gold to-[#E8CC7A] text-ink",
-  },
-  {
-    text: "PragDev redesigned our application with a cleaner interface and a better user experience. The result is a simpler product that's easier to navigate across mobile devices.",
-    name: "Kenny",
-    role: "Product Manager, ME4U",
-    initials: "Ke",
-    avatarClass: "bg-gradient-to-br from-forest to-[#1a5c35]",
-  },
-  {
     featured: true,
     text: "PragDev created a modern website that communicates our services clearly and makes it easy for visitors to contact us. Their attention to design, performance, and user experience exceeded our expectations.",
     name: "Ivy",
@@ -40,7 +26,7 @@ export const testimonials: Testimonial[] = [
   {
     text: "Our new website is clean, accessible, and simple to navigate. Members and visitors can quickly find service times, events, and announcements from any device.",
     name: "Dr. Odeny",
-    role: "St. Stephen Church",
+    role: "St. Stephen's Cathedral",
     initials: "O",
     avatarClass: "bg-gradient-to-br from-[#475569] to-[#94a3b8]",
   },
@@ -80,7 +66,7 @@ export default function Testimonials() {
         </h2>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <div className="glow-top reveal delay-1 flex flex-col justify-between rounded-2xl p-9 text-cream lg:row-span-2">
+          <div className="glow-top reveal delay-1 flex flex-col justify-between rounded-2xl p-9 text-cream">
             <div>
               <Stars />
               <p className="mt-6 font-script text-[1.9rem] font-medium leading-[1.25]">{featured.text}</p>

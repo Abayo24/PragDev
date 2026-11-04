@@ -80,7 +80,7 @@ export const locationPages: ServicePage[] = [
         desc: "A healthcare landing page that explains services clearly and encourages enquiries through WhatsApp.",
       },
       {
-        name: "St. Stephen Church",
+        name: "St. Stephen's Cathedral",
         desc: "An accessible website where visitors find service times, events and announcements on any device.",
       },
     ],
@@ -184,11 +184,11 @@ export const locationPages: ServicePage[] = [
         desc: "A healthcare business website that helps patients learn about services and get in touch.",
       },
       {
-        name: "Nia Dada",
-        desc: "A sports organization website with brand refinement, improved content flow and clear calls to action.",
+        name: "Fresh&Fold",
+        desc: "A website for a Nairobi upholstery cleaning service where customers book a clean on WhatsApp.",
       },
     ],
-    testimonialName: "Sophy",
+    testimonialName: "Kieva",
     faqs: [
       {
         question: "How much does a website cost in Kenya?",
@@ -285,8 +285,8 @@ export const locationPages: ServicePage[] = [
     ],
     work: [
       {
-        name: "ME4U",
-        desc: "A fintech mobile wallet interface designed to simplify everyday financial tasks.",
+        name: "KaziDocs",
+        desc: "A financial workspace for creating invoices, quotations and receipts, managing clients and tracking revenue.",
       },
       {
         name: "Fertitude",

@@ -82,7 +82,7 @@ export function PhoneShot({
       aria-hidden
       className={`rounded-[26px] border border-white/20 bg-ink p-2 shadow-[0_24px_60px_rgba(0,0,0,0.6)] ${className}`}
     >
-      <Image src={src} alt="" width={400} height={736} sizes="168px" priority={priority} className="block h-auto w-full rounded-[19px]" />
+      <Image src={src} alt="" width={400} height={732} sizes="168px" priority={priority} className="block h-auto w-full rounded-[19px]" />
     </div>
   );
 }
@@ -127,8 +127,8 @@ export function HeroVisual() {
         ))}
       </svg>
 
-      <BrowserShot src="/work/kibandaski.webp" priority className="absolute left-1/2 top-10 w-[86%] max-w-[720px] -translate-x-1/2 md:top-14" />
-      <PhoneShot src="/work/nia-dada-mobile.webp" priority className="absolute right-[3%] top-24 w-[118px] md:right-[14%] md:top-32 md:w-[168px]" />
+      <BrowserShot src="/work/ivorris-care.webp" priority className="absolute left-1/2 top-10 w-[86%] max-w-[720px] -translate-x-1/2 md:top-14" />
+      <PhoneShot src="/work/guru-spices-mobile.webp" priority className="absolute right-[3%] top-24 w-[118px] md:right-[14%] md:top-32 md:w-[168px]" />
 
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-ink to-transparent" />
     </div>

@@ -25,14 +25,8 @@ export default function Choose() {
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.45fr_1fr]">
           {/* Websites */}
-          <div className="card-dark reveal delay-1 relative overflow-hidden border-lime/30 p-8 md:p-10">
-            <div
-              className="pointer-events-none absolute -bottom-6 -right-20 hidden w-[62%] md:block"
-              style={{ maskImage: "linear-gradient(to right, transparent, #000 45%)", WebkitMaskImage: "linear-gradient(to right, transparent, #000 45%)" }}
-            >
-              <BrowserShot src="/work/guru-spices.webp" sizes="(max-width: 1024px) 60vw, 400px" className="rounded-2xl" />
-            </div>
-            <div className="relative z-10 max-w-[340px]">
+          <div className="card-dark reveal delay-1 flex flex-col border-lime/30 p-8 md:p-10">
+            <div className="mb-8 max-w-[340px]">
               <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-lime/30 bg-forest text-lime">
                 <FaCode aria-hidden />
               </span>
@@ -52,11 +46,12 @@ export default function Choose() {
                 Explore Website Development
               </Link>
             </div>
+            <BrowserShot src="/work/st-stephens-cathedral.webp" sizes="(max-width: 1024px) 90vw, 540px" className="mt-auto rounded-2xl" />
           </div>
 
           {/* Apps */}
-          <div className="card-dark reveal delay-2 relative overflow-hidden p-8 md:p-10">
-            <div className="relative z-10">
+          <div className="card-dark reveal delay-2 flex flex-col p-8 md:p-10">
+            <div className="mb-8">
               <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-cream">
                 <FaMobileAlt aria-hidden />
               </span>
@@ -82,6 +77,7 @@ export default function Choose() {
                 Or explore web app development
               </Link>
             </div>
+            <BrowserShot src="/work/kazidocs.webp" sizes="(max-width: 1024px) 90vw, 360px" className="mt-auto rounded-2xl" />
           </div>
         </div>
       </div>

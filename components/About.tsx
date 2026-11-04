@@ -123,7 +123,7 @@ export default function About() {
           {/* Artwork with overlapping card */}
           <div className="reveal delay-2 relative pb-16 lg:pl-14">
             <div className="glow-top overflow-hidden rounded-2xl px-8 pt-10" aria-hidden>
-              <BrowserShot src="/work/nia-dada.webp" sizes="(max-width: 1024px) 90vw, 520px" />
+              <BrowserShot src="/work/fresh-and-fold.webp" sizes="(max-width: 1024px) 90vw, 520px" />
             </div>
             <div className="absolute bottom-0 left-0 max-w-[340px] rounded-2xl bg-ink p-6 shadow-[0_24px_60px_rgba(15,13,9,0.35)]">
               <p className="font-script text-[1.5rem] font-semibold leading-[1.15] text-lime">

@@ -1,16 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { IconType } from "react-icons";
-import { FaChurch, FaCode, FaHeartbeat, FaHospital, FaWallet } from "react-icons/fa";
+import { FaCode, FaHeartbeat } from "react-icons/fa";
 import { Script } from "@/components/Art";
 import { whatsappUrl } from "@/lib/site";
 
 const icons: Record<string, IconType> = {
   Fertitude: FaHeartbeat,
-  "Ivorris Care": FaHospital,
-  ME4U: FaWallet,
-  "Developer Portfolio": FaCode,
-  "St. Stephen Church": FaChurch,
 };
 
 interface Project {
@@ -24,17 +20,68 @@ interface Project {
 
 const projects: Project[] = [
   {
-    tag: "Sports · Web Presence",
-    title: "Nia Dada",
-    desc: "Visually appealing and user-friendly website designed to strengthen the brand's online presence. Includes visual brand refinement, optimized content flow, and a strong CTA strategy.",
+    tag: "Healthcare • Landing Page",
+    title: "Ivorris Care",
+    desc: "A conversion-focused landing page built to explain services clearly, improve user experience, and encourage more enquiries through WhatsApp.",
     image: {
-      src: "/work/nia-dada.webp",
-      alt: "Nia Dada website homepage with the headline Play with purpose. Empower her.",
+      src: "/work/ivorris-care.webp",
+      alt: "Ivorris Care website homepage with the headline Not sure what care you need? Talk to a nurse.",
     },
-    url: "https://niadada.vercel.app",
     pills: [
-      { label: "Brand Refinement", variant: "lime" },
-      { label: "Conversion Focused", variant: "orange" },
+      { label: "Lead Generation", variant: "lime" },
+      { label: "Fast Loading", variant: "orange" },
+    ],
+  },
+  {
+    tag: "Church • Community Website",
+    title: "St. Stephen's Cathedral",
+    desc: "An accessible website that helps visitors find service times, events, ministries, and important announcements across all devices.",
+    image: {
+      src: "/work/st-stephens-cathedral.webp",
+      alt: "ACK St. Stephen's Cathedral Kisumu website homepage with the headline A Wholesome Christian Ministry",
+    },
+    pills: [
+      { label: "Accessible", variant: "lime" },
+      { label: "Community Focused", variant: "orange" },
+    ],
+  },
+  {
+    tag: "Finance • Web App",
+    title: "KaziDocs",
+    desc: "A financial workspace for creating invoices, quotations and receipts, managing clients, and tracking revenue from one dashboard.",
+    image: {
+      src: "/work/kazidocs.webp",
+      alt: "KaziDocs dashboard showing invoiced, collected and pending totals in Kenya shillings",
+    },
+    pills: [
+      { label: "Web App", variant: "lime" },
+      { label: "Invoicing", variant: "orange" },
+    ],
+  },
+  {
+    tag: "Home Services • Business Website",
+    title: "Fresh&Fold",
+    desc: "A website for a Nairobi upholstery cleaning service, where customers see services and pricing and book a clean on WhatsApp.",
+    image: {
+      src: "/work/fresh-and-fold.webp",
+      alt: "Fresh&Fold website homepage with the headline Your Sofa, Spotless Again and a Book a Clean button",
+    },
+    pills: [
+      { label: "WhatsApp Booking", variant: "lime" },
+      { label: "Local Business", variant: "orange" },
+    ],
+  },
+  {
+    tag: "Politics • Campaign Website",
+    title: "Hon. Daniel Mwangi",
+    desc: "A campaign website with a manifesto, events, county pages, volunteer sign-ups and donations.",
+    image: {
+      src: "/work/daniel-mwangi.webp",
+      alt: "Hon. Daniel Mwangi campaign website homepage with the headline Leadership Kenya Can Trust",
+    },
+    pills: [
+      { label: "Donations", variant: "lime" },
+      { label: "Volunteer Sign-ups", variant: "orange" },
     ],
   },
   {
@@ -66,48 +113,25 @@ const projects: Project[] = [
     ],
   },
   {
-    tag: "Healthcare • Business Website",
-    title: "Fertitude",
-    desc: "A modern healthcare website designed to build trust, improve accessibility, and make it easier for patients to learn about services and get in touch.",
-    pills: [
-      { label: "SEO Ready", variant: "lime" },
-      { label: "Accessible", variant: "orange" },
-    ],
-  },
-  {
-    tag: "Healthcare • Landing Page",
-    title: "Ivorris Care",
-    desc: "A conversion-focused landing page built to explain services clearly, improve user experience, and encourage more enquiries through WhatsApp.",
-    pills: [
-      { label: "Lead Generation", variant: "lime" },
-      { label: "Fast Loading", variant: "orange" },
-    ],
-  },
-  {
-    tag: "Fintech • UI/UX Design",
-    title: "ME4U",
-    desc: "A modern mobile wallet interface designed to simplify everyday financial tasks with a clean layout and intuitive navigation.",
-    pills: [
-      { label: "Mobile First", variant: "lime" },
-      { label: "UI/UX Design", variant: "orange" },
-    ],
-  },
-  {
     tag: "Portfolio Website",
     title: "Developer Portfolio",
     desc: "A modern portfolio showcasing frontend development, responsive layouts, accessibility best practices, and high-performance web design.",
+    image: {
+      src: "/work/developer-portfolio.webp",
+      alt: "Abayo Akinyi developer portfolio homepage on a dark blue background",
+    },
     pills: [
       { label: "Next.js", variant: "orange" },
       { label: "Performance", variant: "lime" },
     ],
   },
   {
-    tag: "Church • Community Website",
-    title: "St. Stephen Church",
-    desc: "An accessible website that helps visitors find service times, events, ministries, and important announcements across all devices.",
+    tag: "Healthcare • Business Website",
+    title: "Fertitude",
+    desc: "A modern healthcare website designed to build trust, improve accessibility, and make it easier for patients to learn about services and get in touch.",
     pills: [
-      { label: "Accessible", variant: "lime" },
-      { label: "Community Focused", variant: "orange" },
+      { label: "SEO Ready", variant: "lime" },
+      { label: "Accessible", variant: "orange" },
     ],
   },
 ];
@@ -189,20 +213,20 @@ export default function Portfolio() {
               </div>
             );
           })}
+        </div>
 
-          <div className="reveal delay-3 flex flex-col justify-between gap-6 rounded-2xl border border-ink/10 p-7">
-            <p className="text-[1.3rem] font-normal tracking-[-0.02em]">
-              Your business could be our next success story.
-            </p>
-            <Link
-              href={whatsappUrl("Hi PragDev! I found your website and I'd like to discuss a project for my business.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn self-start bg-ink text-cream hover:bg-forest"
-            >
-              Book a Free Consultation ↗
-            </Link>
-          </div>
+        <div className="reveal mt-12 flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-ink/10 px-8 py-7">
+          <p className="text-[1.3rem] font-normal tracking-[-0.02em]">
+            Your business could be our next success story.
+          </p>
+          <Link
+            href={whatsappUrl("Hi PragDev! I found your website and I'd like to discuss a project for my business.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn bg-ink text-cream hover:bg-forest"
+          >
+            Book a Free Consultation ↗
+          </Link>
         </div>
       </div>
     </section>

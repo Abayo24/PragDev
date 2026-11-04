@@ -78,11 +78,11 @@ export const servicePages: ServicePage[] = [
         desc: "A healthcare landing page that explains services clearly and drives enquiries through WhatsApp.",
       },
       {
-        name: "Nia Dada",
-        desc: "A sports organization website with brand refinement, improved content flow and clear calls to action.",
+        name: "Fresh&Fold",
+        desc: "A website for a Nairobi upholstery cleaning service where customers book a clean on WhatsApp.",
       },
       {
-        name: "St. Stephen Church",
+        name: "St. Stephen's Cathedral",
         desc: "An accessible website where visitors find service times, events and announcements on any device.",
       },
     ],
@@ -156,13 +156,6 @@ export const servicePages: ServicePage[] = [
       "Teams with an existing app that is confusing or difficult to use",
       "Founders who have an idea but are not yet sure what to build",
     ],
-    work: [
-      {
-        name: "ME4U",
-        desc: "A fintech mobile wallet interface designed to simplify everyday financial tasks with a clean layout and intuitive navigation.",
-      },
-    ],
-    testimonialName: "Kenny",
     faqs: [
       {
         question: "How much does it cost to build an app in Kenya?",
@@ -177,7 +170,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Can you redesign an existing app?",
         answer:
-          "Yes. PragDev redesigned the ME4U application with a cleaner interface and a better user experience across mobile devices.",
+          "Yes. We review what is confusing or slow in your current app, then redesign the interface and user experience so it is easier to use on mobile devices.",
       },
       {
         question: "I only have an idea. Can you still help?",
@@ -231,6 +224,12 @@ export const servicePages: ServicePage[] = [
       "Service businesses that want customers to book or manage accounts online",
       "Startups launching a software product in the browser",
       "Teams that have outgrown off-the-shelf tools",
+    ],
+    work: [
+      {
+        name: "KaziDocs",
+        desc: "A financial workspace for creating invoices, quotations and receipts, managing clients and tracking revenue.",
+      },
     ],
     faqs: [
       {
