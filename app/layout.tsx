@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit, JetBrains_Mono } from "next/font/google";
-import Cursor from "@/components/Cursor";
+import { Caveat, Outfit } from "next/font/google";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import Nav from "@/components/Nav";
@@ -9,19 +8,14 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { SITE_URL, site } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-});
-
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const caveat = Caveat({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {
@@ -50,14 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body bg-cream text-ink antialiased overflow-x-hidden`}
+        className={`${outfit.variable} ${caveat.variable} font-body bg-ink text-cream antialiased overflow-x-hidden`}
       >
         <noscript>
-          <style>{`.reveal{opacity:1;transform:none}*{cursor:auto!important}`}</style>
+          <style>{`.reveal{opacity:1;transform:none}`}</style>
         </noscript>
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
-        <Cursor />
         <Nav />
         {children}
         <Footer />

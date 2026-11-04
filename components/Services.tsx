@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Script } from "@/components/Art";
 
 const services: {
   num: string;
@@ -90,121 +91,72 @@ const services: {
 ];
 
 export default function Services() {
-	return (
-		<section
-			id='services'
-			className='py-36 bg-ink relative overflow-hidden'
-		>
-			{/* Ghost number */}
-			<span
-				className='text-stroke-white-soft absolute bottom-[-40px] right-[-20px] font-display font-black leading-none tracking-tightest pointer-events-none select-none'
-				style={{ fontSize: '28vw' }}
-				aria-hidden
-			>
-				07
-			</span>
+  return (
+    <section id="services" className="glow-soft px-6 py-28 md:px-10">
+      <div className="mx-auto max-w-[1240px]">
+        <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+          <div className="reveal">
+            <span className="eyebrow mb-4 text-lime">What We Offer</span>
+            <h2 className="section-title">
+              Website &amp; app{" "}
+              <span className="text-[1.15em] leading-none">
+                <Script>development</Script>
+              </span>{" "}
+              <br className="hidden md:block" />
+              services
+            </h2>
+          </div>
+          <p className="reveal delay-2 max-w-[340px] text-[0.95rem] font-light leading-[1.7] text-cream/70">
+            From business websites to mobile apps and custom web applications,
+            built in Nairobi for clients in Kenya and beyond.
+          </p>
+        </div>
 
-			<div className='max-w-[1240px] mx-auto px-10'>
-				{/* Header */}
-				<div className='flex justify-between items-end mb-[72px] gap-10 flex-wrap'>
-					<div className='reveal'>
-						<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5'>
-							What We Offer
-						</span>
-						<h2
-							className='font-display font-extrabold leading-[0.95] tracking-tighter2 text-cream'
-							style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)' }}
-						>
-							Website &amp; app
-							<br />
-							<em className='not-italic font-light text-cream/65'>
-								development
-							</em>
-							<br />
-							services
-						</h2>
-					</div>
-					<p className='reveal delay-2 max-w-[300px] text-[0.9rem] font-light text-cream/65 leading-[1.7] pb-2'>
-						From business websites to mobile apps and custom web
-						applications, built in Nairobi for clients in Kenya
-						and beyond.
-					</p>
-				</div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12">
+          {services.map((svc, i) => (
+            <div
+              key={svc.num}
+              className={`card-dark group relative flex flex-col p-7 transition-colors duration-300 hover:border-lime/40 reveal delay-${(i % 3) + 1} ${i < 3 ? "lg:col-span-4" : "lg:col-span-3"}`}
+            >
+              <span className="text-[0.8rem] text-cream/60">{svc.num}</span>
+              <h3 className="mt-5 text-[1.35rem] font-normal leading-[1.2] tracking-[-0.025em]">
+                {svc.href ? (
+                  <Link href={svc.href} className="after:absolute after:inset-0 group-hover:text-lime">
+                    {svc.name}
+                  </Link>
+                ) : (
+                  svc.name
+                )}
+              </h3>
+              <p className="mt-3 flex-1 text-[0.9rem] font-light leading-[1.65] text-cream/70">{svc.desc}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {svc.tags.map((tag) => (
+                  <span key={tag} className="pill">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-				{/* List */}
-				<div className='border-t border-cream/10 text-cream/65'>
-					{services.map((svc, i) => (
-						<div
-							key={svc.num}
-							className={`svc-row flex flex-col md:grid md:grid-cols-[80px_1fr_auto] items-start gap-4 md:gap-10 py-8 md:py-11 border-b border-cream/10 transition-all duration-300 relative reveal delay-${(i % 3) + 1} group`}
-						>
-							{/* Hover bg */}
-							<div className='absolute inset-0 bg-orange/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none' />
-
-							{/* Number */}
-							<span className='svc-num font-mono text-[0.72rem] tracking-[0.12em] text-cream/65 md:pt-1.5 transition-colors duration-300 group-hover:text-orange relative z-10'>
-								{svc.num}
-							</span>
-
-							{/* Content */}
-							<div className='relative z-10'>
-								<h3
-									className='font-display font-bold tracking-tighter3 text-cream leading-none mb-3.5'
-									style={{
-										fontSize:
-											'clamp(1.4rem, 2.8vw, 2.4rem)',
-									}}
-								>
-									{svc.href ? (
-										<Link
-											href={svc.href}
-											className='hover:text-orange transition-colors duration-200'
-										>
-											{svc.name}
-										</Link>
-									) : (
-										svc.name
-									)}
-								</h3>
-								<p className='text-[0.9rem] font-light text-cream/65 leading-[1.7] max-w-[520px]'>
-									{svc.desc}
-								</p>
-								<div className='flex flex-wrap gap-2 mt-4'>
-									{svc.tags.map((tag) => (
-										<span
-											key={tag}
-											className='font-mono text-[0.65rem] tracking-[0.08em] px-3 py-1 rounded-full border border-cream/10 text-cream/65'
-										>
-											{tag}
-										</span>
-									))}
-								</div>
-							</div>
-              
-							<span className='svc-arrow hidden md:block text-2xl text-orange pt-1 relative z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1'>
-								↗
-							</span>
-						</div>
-					))}
-				</div>
-
-				{/* Where we work */}
-				<p className='relative z-10 mt-12 text-[0.95rem] font-light text-cream/75 leading-[1.8] max-w-[760px]'>
-					Based in Nairobi and working remotely, PragDev is a{' '}
-					<Link href='/website-developer-nairobi' className='text-cream underline underline-offset-4 hover:text-orange'>
-						website developer in Nairobi
-					</Link>
-					, a{' '}
-					<Link href='/website-developer-kenya' className='text-cream underline underline-offset-4 hover:text-orange'>
-						website developer in Kenya
-					</Link>{' '}
-					and a{' '}
-					<Link href='/website-developer-africa' className='text-cream underline underline-offset-4 hover:text-orange'>
-						website developer for businesses across Africa
-					</Link>
-					.
-				</p>
-			</div>
-		</section>
-	);
+        {/* Where we work */}
+        <p className="mt-12 max-w-[760px] text-[0.95rem] font-light leading-[1.8] text-cream/75">
+          Based in Nairobi and working remotely, PragDev is a{" "}
+          <Link href="/website-developer-nairobi" className="text-cream underline underline-offset-4 hover:text-lime">
+            website developer in Nairobi
+          </Link>
+          , a{" "}
+          <Link href="/website-developer-kenya" className="text-cream underline underline-offset-4 hover:text-lime">
+            website developer in Kenya
+          </Link>{" "}
+          and a{" "}
+          <Link href="/website-developer-africa" className="text-cream underline underline-offset-4 hover:text-lime">
+            website developer for businesses across Africa
+          </Link>
+          .
+        </p>
+      </div>
+    </section>
+  );
 }

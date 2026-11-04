@@ -2,27 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Google Fonts loaded via next/font — CSS vars injected in layout ── */
-
-/* ── Grain overlay ── */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
-  opacity: 0.6;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
-/* ── Custom cursor ── */
-@media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-}
-
-/* ── Scrollbar ── */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -30,100 +14,125 @@ body::after {
   background: #0f0d09;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e8400c;
+  background: #0d2a1a;
   border-radius: 3px;
 }
 
-/* ── Smooth scroll ── */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ── Selection colour ── */
 ::selection {
-  background: #e8400c;
-  color: #f2ede3;
+  background: #a3ff00;
+  color: #0f0d09;
 }
 
-/* ── Ticker animation ── */
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.animate-ticker {
-  animation: ticker 28s linear infinite;
+@layer components {
+  .section-title {
+    @apply font-display font-normal leading-[1.06] tracking-[-0.035em];
+    font-size: clamp(2.2rem, 4.6vw, 4rem);
+  }
+
+  .eyebrow {
+    @apply block text-[0.78rem] font-medium uppercase tracking-[0.14em];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] px-6 py-3.5 text-[0.92rem] font-medium tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5;
+  }
+  .btn-lime {
+    @apply btn bg-lime text-ink hover:bg-lime-2 hover:shadow-[0_10px_34px_rgba(163,255,0,0.3)];
+  }
+  .btn-dark {
+    @apply btn border border-white/15 bg-white/[0.07] text-cream hover:bg-white/[0.14];
+  }
+  .btn-white {
+    @apply btn bg-white text-[#b52f06] hover:bg-ink hover:text-white;
+  }
+
+  /* Dark glass card from the reference design */
+  .card-dark {
+    @apply rounded-2xl border border-white/[0.09];
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
+  }
+
+  .pill {
+    @apply rounded-full border border-white/10 px-3 py-1 text-[0.72rem] text-cream/70;
+  }
 }
 
-/* ── Blink animation ── */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
+/* Forest and lime glow falling from the top of a dark section */
+.glow-top {
+  background:
+    radial-gradient(70% 55% at 50% -8%, rgba(163, 255, 0, 0.17), transparent 70%),
+    radial-gradient(100% 75% at 50% -10%, #14422a 0%, rgba(13, 42, 26, 0.75) 42%, transparent 78%),
+    #0f0d09;
 }
+.glow-soft {
+  background:
+    radial-gradient(70% 60% at 85% 0%, rgba(13, 42, 26, 0.95), transparent 72%),
+    #0f0d09;
+}
+
+/* Headline that fades towards both edges */
+.text-fade {
+  background: linear-gradient(90deg, rgba(242, 237, 227, 0.62) 0%, #f2ede3 32%, #f2ede3 68%, rgba(242, 237, 227, 0.62) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairlines behind the hero headline */
+.hero-lines {
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+
+/* Hand-drawn strokes */
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.2s cubic-bezier(0.65, 0, 0.35, 1) 0.25s forwards;
+}
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.twinkle {
+  animation: twinkle 3.6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.95; }
+}
+
 .animate-blink {
   animation: blink 2s ease-in-out infinite;
 }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
 
-/* ── Reveal animation ── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px) scale(0.985);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 .delay-1 { transition-delay: 0.08s; }
 .delay-2 { transition-delay: 0.16s; }
 .delay-3 { transition-delay: 0.24s; }
 .delay-4 { transition-delay: 0.32s; }
-.delay-5 { transition-delay: 0.40s; }
-.delay-6 { transition-delay: 0.48s; }
 
-/* ── Dot-grid background (process section) ── */
-.bg-dot-grid {
-  background-image:
-    linear-gradient(rgba(163,255,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(163,255,0,0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-/* ── Hero ghost text ── */
-.text-stroke {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.04);
-}
-.text-stroke-cream {
-  color: transparent;
-  -webkit-text-stroke: 1.5px #DDD7C9;
-}
-.text-stroke-white-soft {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
-}
-
-/* ── Service row hover arrow ── */
-.svc-row .svc-arrow {
-  opacity: 0;
-  transform: translate(0, 0);
-  transition: all 0.3s ease;
-}
-.svc-row:hover .svc-arrow {
-  opacity: 1;
-  transform: translate(4px, -4px);
-}
-.svc-row:hover .svc-num {
-  color: #e8400c;
-}
-
-/* ── Bento card hover ── */
-.bento-card:hover {
-  transform: scale(1.015);
-  z-index: 10;
-}
-
-/* ── Counter ── */
 .counter-num {
   font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .draw { animation: none; stroke-dashoffset: 0; }
+  .twinkle, .animate-blink { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
 }

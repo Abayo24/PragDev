@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { BrowserShot, Script, Star } from "@/components/Art";
 
 const stats = [
   {
@@ -74,7 +75,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [value]);
 
   return (
-    <span className="font-display text-[2.8rem] font-black tracking-tightest leading-none counter-num">
+    <span className="text-[2.8rem] font-normal tracking-[-0.04em] leading-none counter-num">
       <span ref={ref}>{value}</span>
       <span className="text-orange">{suffix}</span>
     </span>
@@ -83,124 +84,81 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-cream">
-      <div className="max-w-[1240px] mx-auto px-10">
-        {/* Ghost super-title */}
-        <p
-          className="text-stroke-cream font-display font-black tracking-tighter2 leading-none select-none mb-[-20px] reveal"
-          style={{ fontSize: "clamp(5rem, 10vw, 9.5rem)" }}
-          aria-hidden
+    <section id="about" className="bg-cream px-6 py-28 text-ink md:px-10">
+      <div className="mx-auto max-w-[1160px]">
+        <h2
+          className="reveal mx-auto max-w-[900px] text-center font-display font-normal leading-[1.08] tracking-[-0.04em]"
+          style={{ fontSize: "clamp(2.4rem, 6vw, 5.2rem)" }}
         >
-          ABOUT
-        </p>
+          We build websites and apps that help{" "}
+          <Star className="mx-1 inline-block h-[0.62em] w-[0.62em] text-orange" />{" "}
+          businesses{" "}
+          <span className="text-[1.15em] leading-none">
+            <Script tone="orange">grow online</Script>
+          </span>
+        </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          {/* Left */}
+        <div className="mt-24 grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_1.15fr]">
           <div className="reveal delay-1">
-            <div className="flex items-center gap-3 font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-7 after:content-[''] after:flex-1 after:h-px after:bg-cream-3">
-              Our Story
-            </div>
-
-            <h2
-              className="font-display font-bold tracking-tighter3 leading-[1.12] mb-7"
-              style={{ fontSize: "clamp(1.8rem, 3.2vw, 3rem)" }}
-            >
-              We build websites and apps that help{" "}
-              <em className="not-italic font-light text-ink-muted">
-                businesses grow online
-              </em>
-            </h2>
-
-            <p className="text-ink-muted font-light leading-[1.85] mb-5">
+            <h3 className="text-[2rem] font-normal leading-[1.15] tracking-[-0.03em]">
+              <span className="text-[#b52f06]">Our story</span>
+              <br />
+              built around your goals
+            </h3>
+            <p className="mt-6 font-light leading-[1.8] text-ink-muted">
               PragDev Softwares is a Nairobi-based website and app development
               company. We help startups and growing businesses succeed online
               with fast, modern websites, web applications and mobile apps,
               focusing on performance, accessibility, SEO and user experience.
             </p>
-            <p className="text-ink-muted font-light leading-[1.85]">
+            <p className="mt-4 font-light leading-[1.8] text-ink-muted">
               Every project is built with clean code, responsive design, and
-              long-term maintainability in mind. Whether you're launching a new
-              business, refreshing an outdated website, or building an app for
-              your next product, we build digital experiences that
-              inspire confidence and convert visitors into customers.
+              long-term maintainability in mind. Whether you&apos;re launching a
+              new business, refreshing an outdated website, or building an app
+              for your next product, we build digital experiences that inspire
+              confidence and convert visitors into customers.
             </p>
-
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-0.5 mt-12 border border-ink/10">
-              {stats.map((s, i) => (
-                <div
-                  key={i}
-                  className={`p-7 border border-ink/10 bg-cream hover:bg-cream-2 transition-colors duration-200 reveal delay-${i + 1}`}
-                >
-                  <Counter value={s.value} suffix={s.suffix} />
-                  <p className="text-[0.82rem] text-ink-muted mt-1.5">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right */}
-          <div className="reveal delay-2">
-            {/* Dark card */}
-            <div className="bg-ink rounded-sm px-10 py-10 relative overflow-hidden min-h-[360px] flex flex-col justify-end">
-              <span
-                className="absolute top-8 right-8 font-display font-black leading-none tracking-tightest select-none pointer-events-none"
-                style={{
-                  fontSize: "7rem",
-                  color: "transparent",
-                  WebkitTextStroke: "1px rgba(255,255,255,0.07)",
-                }}
-                aria-hidden
-              >
-                PragDev
-              </span>
-              <div className="flex flex-wrap gap-2 mb-6 relative z-10">
-                {[
-                  "Fast",
-                  "SEO Ready",
-                  "Accessible",
-                  "Responsive",
-                  "Business Focused",
-                ].map((tag, i) => (
-                  <span
-                    key={tag}
-                    className={`font-mono text-[0.68rem] tracking-[0.08em] px-3.5 py-1.5 rounded-full font-medium border ${
-                      i % 2 === 0
-                        ? "bg-lime/12 text-lime border-lime/20"
-                        : i === 1
-                          ? "bg-orange/15 text-[#ff7043] border-orange/25"
-                          : "bg-cream/6 text-cream/65 border-cream/10"
-                    }`}
-                  >
+          {/* Artwork with overlapping card */}
+          <div className="reveal delay-2 relative pb-16 lg:pl-14">
+            <div className="glow-top overflow-hidden rounded-2xl px-8 pt-10" aria-hidden>
+              <BrowserShot src="/work/nia-dada.webp" sizes="(max-width: 1024px) 90vw, 520px" />
+            </div>
+            <div className="absolute bottom-0 left-0 max-w-[340px] rounded-2xl bg-ink p-6 shadow-[0_24px_60px_rgba(15,13,9,0.35)]">
+              <p className="font-script text-[1.5rem] font-semibold leading-[1.15] text-lime">
+                &quot;Fast, accessible, SEO-ready websites and apps built to help
+                businesses grow.&quot;
+              </p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {["Fast", "SEO Ready", "Accessible", "Responsive", "Business Focused"].map((tag) => (
+                  <span key={tag} className="pill">
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="font-display text-[1.2rem] italic font-light text-cream/65 leading-[1.5] relative z-10">
-                "Fast, accessible, SEO-ready websites and apps built to help
-                businesses grow."
-              </p>
-            </div>
-
-            {/* Values list */}
-            <div className="border border-ink/10 flex flex-col mt-4 lg:mt-20">
-              {values.map((v, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 px-5 py-4 border-b border-ink/10 last:border-b-0 hover:bg-cream-2 transition-colors duration-200"
-                >
-                  <p className="text-[0.9rem] text-ink-muted">
-                    <strong className="text-ink font-semibold">
-                      {v.title}
-                    </strong>{" "}
-                    — {v.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-cream p-7">
+              <Counter value={s.value} suffix={s.suffix} />
+              <p className="mt-2 text-[0.85rem] text-ink-muted">{s.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Values */}
+        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {values.map((v) => (
+            <div key={v.title}>
+              <h3 className="text-[1.1rem] font-medium tracking-[-0.02em]">{v.title}</h3>
+              <p className="mt-2 text-[0.9rem] font-light leading-[1.65] text-ink-muted">{v.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

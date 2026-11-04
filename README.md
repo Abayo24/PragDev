@@ -5,7 +5,7 @@ A modern, high-converting website for PragDev Softwares built with:
 - **Next.js 14** (App Router)
 - **TypeScript**
 - **Tailwind CSS v3**
-- **next/font** (Fraunces, Outfit, JetBrains Mono — zero layout shift)
+- **next/font** (Outfit, Caveat — zero layout shift)
 
 ---
 
@@ -43,10 +43,10 @@ pragdev/
 │   ├── layout.tsx         # Root layout with fonts & metadata
 │   └── page.tsx           # Home page — assembles all sections
 ├── components/
-│   ├── Cursor.tsx         # Custom magnetic cursor
 │   ├── Nav.tsx            # Sticky nav + mobile hamburger
 │   ├── Hero.tsx           # Full-screen hero section
-│   ├── Ticker.tsx         # Orange scrolling tech ticker
+│   ├── Art.tsx            # Star, swoosh and device artwork drawn in code
+│   ├── Choose.tsx         # Websites vs apps cards
 │   ├── About.tsx          # About + animated counters
 │   ├── Services.tsx       # Editorial numbered service list
 │   ├── WhyUs.tsx          # Why choose us split layout
@@ -75,9 +75,8 @@ pragdev/
 | `orange` | `#E8400C` |
 | `lime` | `#A3FF00` |
 | `forest` | `#0D2A1A` |
-| `font-display` | Fraunces (serif) |
-| `font-body` | Outfit (sans) |
-| `font-mono` | JetBrains Mono |
+| `font-display` / `font-body` | Outfit (sans) |
+| `font-script` | Caveat (handwritten accent) |
 
 ---
 

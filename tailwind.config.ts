@@ -32,42 +32,9 @@ const config: Config = {
         forest: "#0D2A1A",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        display: ["var(--font-outfit)", "sans-serif"],
         body: ["var(--font-outfit)", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "monospace"],
-      },
-      letterSpacing: {
-        tightest: "-0.06em",
-        tighter2: "-0.05em",
-        tighter3: "-0.04em",
-        tighter4: "-0.03em",
-      },
-      animation: {
-        blink: "blink 2s ease-in-out infinite",
-        ticker: "ticker 28s linear infinite",
-        marquee: "marquee 30s linear infinite",
-        float: "float 8s ease-in-out infinite",
-      },
-      keyframes: {
-        blink: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.4" },
-        },
-        ticker: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
-      },
-      backgroundImage: {
-        "dot-grid":
-          "linear-gradient(rgba(163,255,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(163,255,0,0.03) 1px, transparent 1px)",
-      },
-      backgroundSize: {
-        "dot-grid": "48px 48px",
+        script: ["var(--font-caveat)", "cursive"],
       },
     },
   },

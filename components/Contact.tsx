@@ -1,56 +1,48 @@
-import Link from 'next/link';
-import { site } from '@/lib/site';
+import Link from "next/link";
+import { Script } from "@/components/Art";
+import { site, whatsappUrl } from "@/lib/site";
 
 export default function Contact() {
-	return (
-		<section id='contact' className='py-24 bg-ink'>
-			<div className='flex flex-col items-center max-w-[1240px] mx-auto px-10'>
-				<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-orange mb-5 text-center reveal'>
-					Get In Touch
-				</span>
-				<h2
-					className='font-display font-extrabold tracking-tighter2 text-cream leading-[0.95] text-center mb-[72px] reveal delay-1'
-					style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)' }}
-				>
-					Let&apos;s build
-					<br />
-					<em className='not-italic font-light text-cream/65'>
-						something great.
-					</em>
-				</h2>
-				<Link
-					href='https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you.'
-					target='_blank'
-					rel='noopener noreferrer'
-					className='items-center px-7 py-[15px] rounded-[9px] bg-white text-[#b52f06] font-bold text-[0.92rem] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-200 hover:bg-[#c73400] hover:text-white hover:-translate-y-0.5'
-				>
-					Start a Project Today ↗
-				</Link>
+  return (
+    <section id="contact" className="bg-ink px-6 py-28 text-center md:px-10">
+      <div className="mx-auto flex max-w-[760px] flex-col items-center">
+        <span className="eyebrow reveal mb-4 text-lime">Get In Touch</span>
+        <h2 className="section-title reveal delay-1 mb-10">
+          Let&apos;s build{" "}
+          <span className="text-[1.15em] leading-none">
+            <Script>something great.</Script>
+          </span>
+        </h2>
+        <Link
+          href={whatsappUrl("Hello! I saw your website and I'd like to start a new project with you.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-lime"
+        >
+          Start a Project Today ↗
+        </Link>
 
-				<address className='not-italic mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-[0.92rem] text-cream/75'>
-					<span>
-						{site.city}, {site.country}
-					</span>
-					<a href={`tel:${site.phone}`} className='hover:text-cream'>
-						{site.phoneDisplay}
-					</a>
-					<a href={`mailto:${site.email}`} className='hover:text-cream'>
-						{site.email}
-					</a>
-				</address>
+        <address className="mt-9 flex flex-wrap justify-center gap-x-8 gap-y-2 text-[0.92rem] not-italic text-cream/75">
+          <span>
+            {site.city}, {site.country}
+          </span>
+          <a href={`tel:${site.phone}`} className="hover:text-lime">
+            {site.phoneDisplay}
+          </a>
+          <a href={`mailto:${site.email}`} className="hover:text-lime">
+            {site.email}
+          </a>
+        </address>
 
-				{/* Note */}
-				<div className='mt-10 bg-lime/6 border border-lime/15 rounded-[10px] px-6 py-5'>
-					<p className='font-display text-[0.92rem] font-bold text-lime mb-1.5'>
-						✦ Currently accepting new projects
-					</p>
-					<p className='text-[0.82rem] text-cream/65 font-light leading-[1.65]'>
-						We have limited capacity each quarter to ensure every
-						client gets our full attention. Reach out early to
-						secure your spot in our next sprint cycle.
-					</p>
-				</div>
-			</div>
-		</section>
-	);
+        <div className="card-dark mt-10 px-6 py-5">
+          <p className="mb-1.5 text-[0.95rem] font-medium text-lime">Currently accepting new projects</p>
+          <p className="text-[0.88rem] font-light leading-[1.65] text-cream/70">
+            We have limited capacity each quarter to ensure every client gets
+            our full attention. Reach out early to secure your spot in our next
+            sprint cycle.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }

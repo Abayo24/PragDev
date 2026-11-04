@@ -30,77 +30,45 @@ const ctaLinks = [
 ];
 
 export default function WhyUs() {
-	return (
-		<section id='why' className='py-24 bg-cream-2 overflow-hidden'>
-			<div className='max-w-[1240px] mx-auto px-10'>
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-[100px] items-center'>
-					{/* Left */}
-					<div className='reveal'>
-						<span className='block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-5'>
-							Why PragDev
-						</span>
-						<h2
-							className='font-display font-extrabold tracking-tighter2 leading-[1.05] mb-7'
-							style={{ fontSize: 'clamp(2rem, 3.8vw, 3.6rem)' }}
-						>
-							The standard we
-							<br />
-							<em className='not-italic font-light'>
-								hold ourselves to
-							</em>
-						</h2>
-						<p className='text-ink-muted font-light leading-[1.85] mb-10'>
-							We measure our success by your outcomes. Quality
-							code, on-time delivery, and reliable partnership —
-							every single time, without exception.
-						</p>
+  return (
+    <section id="why" className="bg-ink px-6 py-28 md:px-10">
+      <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-start gap-16 lg:grid-cols-2">
+        <div className="reveal">
+          <span className="eyebrow mb-4 text-lime">Why PragDev</span>
+          <h2 className="section-title">
+            The standard we{" "}
+            <span className="text-cream/70">hold ourselves to</span>
+          </h2>
+          <p className="mt-6 max-w-[480px] font-light leading-[1.8] text-cream/70">
+            We measure our success by your outcomes. Quality code, on-time
+            delivery, and reliable partnership, every single time.
+          </p>
+          <div className="mt-9 flex flex-col gap-2.5">
+            {ctaLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="card-dark group flex items-center justify-between gap-5 px-6 py-4 transition-colors duration-200 hover:border-lime/40"
+              >
+                <span className="text-[0.95rem] font-medium group-hover:text-lime">{l.label}</span>
+                <span className="text-lime" aria-hidden>
+                  ↗
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
 
-						<div className='flex flex-col gap-3'>
-							{ctaLinks.map((l) => (
-								<Link
-									key={l.href}
-									href={l.href}
-									className='group flex items-center justify-between gap-5 px-6 py-[18px] border border-ink/12 rounded-lg bg-cream hover:bg-ink transition-all duration-200'
-								>
-									{/* Label: Changes color when group is hovered */}
-									<span className='font-semibold text-[0.92rem] text-ink group-hover:text-cream transition-colors duration-200'>
-										{l.label}
-									</span>
-
-									{/* Icon: Changes background and text when group is hovered */}
-									<div className='w-9 h-9 rounded-lg bg-cream-2 flex items-center justify-center text-[1rem] text-ink transition-all duration-200 group-hover:bg-orange group-hover:text-white'>
-										↗
-									</div>
-								</Link>
-							))}
-						</div>
-					</div>
-
-					{/* Right — numbered features */}
-					<div className='reveal delay-2'>
-						<div className='flex flex-col'>
-							{features.map((f, i) => (
-								<div
-									key={i}
-									className='flex gap-6 py-7 border-b border-ink/10 last:border-b-0 items-start'
-								>
-									<span className='font-display text-[2.8rem] font-black tracking-tightest leading-none text-cream-3 min-w-[60px] pt-1'>
-										{f.num}
-									</span>
-									<div>
-										<h3 className='font-display text-[1.15rem] font-bold tracking-tighter4 mb-2'>
-											{f.title}
-										</h3>
-										<p className='text-[0.88rem] text-ink-muted font-light leading-[1.75]'>
-											{f.desc}
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+        <div className="reveal delay-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {features.map((f) => (
+            <div key={f.num} className="card-dark p-7">
+              <span className="text-[0.8rem] text-lime">{f.num}</span>
+              <h3 className="mt-4 text-[1.2rem] font-normal leading-[1.25] tracking-[-0.02em]">{f.title}</h3>
+              <p className="mt-2.5 text-[0.88rem] font-light leading-[1.65] text-cream/70">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import Ticker from "@/components/Ticker";
+import Choose from "@/components/Choose";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
@@ -23,9 +23,9 @@ export default function Home() {
   return (
     <ScrollRevealProvider>
       <JsonLd data={faqSchema(homeFaqs)} />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
-        <Ticker />
+        <Choose />
         <About />
         <Services />
         <WhyUs />

@@ -46,90 +46,52 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-function SmallCard({ t }: { t: Testimonial }) {
+function Person({ t, dark }: { t: Testimonial; dark?: boolean }) {
   return (
-    <div className="bg-cream-2 rounded-xl p-8 border border-ink/10 hover:bg-cream hover:border-orange transition-all duration-300">
-      <div className="text-[#FFC107] tracking-[3px] text-[0.9rem] mb-5">★★★★★</div>
-      <p className="font-display text-[0.97rem] italic font-light text-ink-muted leading-[1.7] mb-6 before:content-['“'] before:text-orange before:text-[1.2em]">
-        {t.text}
-      </p>
-      <div className="flex items-center gap-4">
-        <div className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-[1rem] text-white flex-shrink-0 ${t.avatarClass}`}>
-          {t.initials}
-        </div>
-        <div>
-          <p className="font-display text-[0.92rem] font-bold text-ink">{t.name}</p>
-          <p className="text-[0.78rem] text-ink-subtle">{t.role}</p>
-        </div>
+    <div className="mt-6 flex items-center gap-3.5">
+      <div className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-[0.95rem] font-medium text-white ${t.avatarClass}`}>
+        {t.initials}
+      </div>
+      <div>
+        <p className={`text-[0.95rem] font-medium ${dark ? "text-cream" : "text-ink"}`}>{t.name}</p>
+        <p className={`text-[0.8rem] ${dark ? "text-cream/65" : "text-ink-muted"}`}>{t.role}</p>
       </div>
     </div>
   );
 }
 
+function Stars() {
+  return (
+    <div className="text-[0.85rem] tracking-[3px] text-gold" role="img" aria-label="Five out of five stars">
+      ★★★★★
+    </div>
+  );
+}
+
 export default function Testimonials() {
-  const featured = testimonials[0];
-  const sidePair = testimonials.slice(1, 3);
-  const bottomRow = testimonials.slice(3);
+  const [featured, ...rest] = testimonials;
 
   return (
-    <section id="testimonials" className="py-24 bg-cream overflow-hidden">
-      <div className="max-w-[1240px] mx-auto px-10">
-        <span className="block font-mono text-[0.7rem] tracking-[0.15em] uppercase text-[#b52f06] mb-5 reveal">
-          Client Testimonials
-        </span>
-        <h2
-          className="font-display font-extrabold tracking-tighter2 leading-[0.95] mb-[72px] reveal delay-1"
-          style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
-        >
-          Trusted by
-          <br />
-          <em className="not-italic font-light text-ink-muted">
-            growing businesses
-          </em>
+    <section id="testimonials" className="bg-cream px-6 pb-28 text-ink md:px-10">
+      <div className="mx-auto max-w-[1240px] border-t border-ink/10 pt-24">
+        <span className="eyebrow reveal mb-4 text-[#b52f06]">Client Testimonials</span>
+        <h2 className="section-title reveal delay-1 mb-14">
+          Trusted by <span className="text-ink-muted">growing businesses</span>
         </h2>
 
-        {/* Featured + side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start">
-          {/* Big quote */}
-          <div className="bg-ink rounded-xl p-14 relative overflow-hidden lg:row-span-2 reveal delay-1">
-            <span
-              className="absolute top-8 right-10 font-display font-black leading-none pointer-events-none select-none text-orange/15"
-              style={{ fontSize: "8rem" }}
-              aria-hidden
-            >
-              "
-            </span>
-            <div className="text-[#FFC107] tracking-[3px] text-[0.9rem] mb-6">{`★★★★★`}</div>
-            <p
-              className="font-display italic font-light text-cream/60 leading-[1.65] mb-10 relative z-10"
-              style={{ fontSize: "clamp(1.1rem, 2vw, 1.55rem)" }}
-            >
-              {featured.text}
-            </p>
-            <div className="flex items-center gap-4 relative z-10">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-[1rem] text-white flex-shrink-0 ${featured.avatarClass}`}>
-                {featured.initials}
-              </div>
-              <div>
-                <p className="font-display text-[0.92rem] font-bold text-cream">{featured.name}</p>
-                <p className="text-[0.78rem] text-cream/65">{featured.role}</p>
-              </div>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="glow-top reveal delay-1 flex flex-col justify-between rounded-2xl p-9 text-cream lg:row-span-2">
+            <div>
+              <Stars />
+              <p className="mt-6 font-script text-[1.9rem] font-medium leading-[1.25]">{featured.text}</p>
             </div>
+            <Person t={featured} dark />
           </div>
-
-          {/* Side pair */}
-          <div className="flex flex-col gap-3.5 reveal delay-2">
-            {sidePair.map((t, i) => (
-              <SmallCard key={i} t={t} />
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom row of 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-          {bottomRow.map((t, i) => (
-            <div key={i} className={`reveal delay-${i + 1}`}>
-              <SmallCard t={t} />
+          {rest.map((t, i) => (
+            <div key={t.name} className={`reveal delay-${(i % 3) + 1} rounded-2xl border border-ink/10 bg-cream-2 p-7`}>
+              <Stars />
+              <p className="mt-4 text-[0.95rem] font-light leading-[1.7] text-ink-muted">{t.text}</p>
+              <Person t={t} />
             </div>
           ))}
         </div>

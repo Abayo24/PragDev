@@ -52,23 +52,23 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-2 border-t border-cream/[0.06] pt-[72px] pb-9">
+    <footer className="bg-ink border-t border-white/10 pt-[72px] pb-9">
       <div className="max-w-[1240px] mx-auto px-10">
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.1fr] gap-10 mb-14">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center mb-4">
-              <div className='w-16 h-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105'>
+              <div className='mr-2.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105'>
 							<Image
-								src='/pds-logo1.png'
+								src='/logo-mark.png'
 								alt='PragDev Softwares logo'
-								width={64}
-								height={64}
+								width={52}
+								height={32}
 								className='object-contain'
 							/>
 						</div>
-              <span className="font-display font-extrabold text-[1.2rem] tracking-tighter2 text-cream">
+              <span className="text-[1.2rem] font-semibold tracking-[-0.03em] text-cream">
                 PragDev Softwares
               </span>
             </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
                   key={s.title}
                   href={s.href}
                   title={s.title}
-                  className="px-3 py-2 rounded-[8px] bg-cream/5 border border-cream/8 flex items-center justify-center text-cream/75 text-[0.82rem] transition-all duration-200 hover:bg-orange hover:border-orange hover:text-white"
+                  className="px-3 py-2 rounded-[8px] bg-cream/5 border border-cream/8 flex items-center justify-center text-cream/75 text-[0.82rem] transition-all duration-200 hover:bg-lime hover:border-lime hover:text-ink"
                 >
                   {s.label}
                 </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Columns */}
           {footerCols.map((col) => (
             <div key={col.title}>
-              <h2 className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/60 mb-5">
+              <h2 className="text-[0.75rem] font-medium tracking-[0.12em] uppercase text-lime mb-5">
                 {col.title}
               </h2>
               <ul className="flex flex-col gap-[11px] list-none">
@@ -103,7 +103,7 @@ export default function Footer() {
                     {l.href ? (
                       <Link
                         href={l.href}
-                        className="text-[0.88rem] text-cream/70 font-light hover:text-cream transition-colors duration-200"
+                        className="text-[0.88rem] text-cream/70 font-light hover:text-lime transition-colors duration-200"
                       >
                         {l.label}
                       </Link>

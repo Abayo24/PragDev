@@ -1,84 +1,55 @@
 import Link from "next/link";
+import { HeroVisual, Star, Script } from "@/components/Art";
+import { whatsappUrl } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      // Added pt-[100px] to clear the 72px navbar, changed to px-6 on mobile to match nav
-      className="min-h-svh flex flex-col relative overflow-hidden bg-ink px-6 md:px-10 pt-[104px] md:pt-[120px] pb-12"
-    >
-      {/* Ghost background text */}
-      <span
-        className="text-stroke absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-black leading-none tracking-tightest whitespace-nowrap pointer-events-none select-none z-0 "
-        style={{ fontSize: "clamp(18vw, 20vw, 22vw)" }}
-        aria-hidden
-      >
-        BUILD
-      </span>
-
-      {/* Main Wrapper matching the Nav's exact constraints */}
-      <div className="relative z-10 max-w-[1240px] mx-auto w-full flex flex-col h-full flex-1">
-        {/* Top bar - Moved inside normal flow so it naturally pushes content down */}
-        <div className="flex items-center justify-between w-full">
-          <span className="hidden md:flex font-mono text-[0.7rem] tracking-[0.15em] uppercase text-cream/65">
-            Website & App Developers • Nairobi • Kenya • Africa
-          </span>
-          <div className="flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.1em] uppercase text-cream/65">
-            <span className="w-2 h-2 rounded-full bg-lime shadow-[0_0_10px_#A3FF00] animate-blink" />
+    <section id="hero" className="glow-top relative overflow-hidden px-6 pt-[128px] text-center md:px-10 md:pt-[150px]">
+      <div className="relative z-10 mx-auto max-w-[1240px]">
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[0.8rem] text-cream/70">
+          <span>Website &amp; App Developers • Nairobi • Kenya • Africa</span>
+          <span className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-lime shadow-[0_0_10px_#A3FF00] animate-blink" />
             Accepting new projects
-          </div>
+          </span>
         </div>
 
-        {/* Content - Pushed to the bottom using mt-auto */}
-        <div className="mt-auto pt-10">
-          {/* <p className="font-mono text-[0.72rem] tracking-[0.15em] uppercase text-cream/65 mb-7 flex items-center gap-4">
-            <span className="w-10 h-px bg-cream/20 block" />
-            Est. 2025 &mdash; 
-          </p> */}
+        <h1
+          className="font-display font-normal leading-[1.1] tracking-[-0.035em]"
+          style={{ fontSize: "clamp(2.7rem, 6.2vw, 5.8rem)" }}
+        >
+          <span className="text-fade">Website &amp; app developers</span>{" "}
+          <br className="hidden md:block" />
+          <span className="text-cream/90">in Nairobi.</span>{" "}
+          <Star className="mx-1 inline-block h-[0.7em] w-[0.7em] -translate-y-[0.04em] text-orange drop-shadow-[0_0_18px_rgba(232,64,12,0.7)]" />{" "}
+          <span className="text-[1.18em] leading-none">
+            <Script>Built right.</Script>
+          </span>
+        </h1>
 
-          <h1
-            className="font-display font-extrabold leading-[0.92] tracking-tighter2 text-cream mb-12"
-            style={{ fontSize: "clamp(3rem, 6.8vw, 7.4rem)" }}
+        <p className="mx-auto mt-7 max-w-[600px] text-[1.05rem] font-light leading-[1.7] text-cream/70">
+          PragDev Softwares is a website and app development company in
+          Nairobi, Kenya. We build fast, SEO-ready websites, web applications
+          and mobile apps that help startups and growing businesses win more
+          customers.
+        </p>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href={whatsappUrl("Hi PragDev! I found your website and I'd like to discuss a project for my business.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-lime"
           >
-            Website &amp; app
-            <br />
-            <em className="not-italic font-light text-orange">developers</em> in Nairobi.
-            <br />
-            <span className="text-lime">Built right.</span>
-          </h1>
-
-          <div className="flex flex-wrap items-start justify-between gap-10">
-            <p className="text-[1.05rem] font-light text-cream/65 max-w-[420px] leading-[1.75]">
-              PragDev Softwares is a website and app development company in
-              Nairobi, Kenya. We build fast, SEO-ready websites, web applications
-              and mobile apps that help startups and growing businesses win more
-              customers.
-            </p>
-            <div className="flex flex-wrap gap-3.5 items-center">
-              <Link
-                href="https://wa.me/254769622996?text=Hi%20PragDev!%20I%20found%20your%20website%20and%20I'd%20like%20to%20discuss%20a%20project%20for%20my%20business."
-                className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-[#c73400] text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-[#a82c00] hover:-translate-y-[3px] hover:shadow-[0_12px_32px_rgba(232,64,12,0.35)] tracking-[-0.01em]"
-              >
-                Start Your Project ↗
-              </Link>
-              <Link
-                href="#portfolio"
-                className="inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] border border-cream/25 text-cream font-semibold text-[0.92rem] transition-all duration-200 hover:bg-cream/8 hover:-translate-y-[3px] tracking-[-0.01em]"
-              >
-                View Our Work
-              </Link>
-            </div>
-          </div>
+            Start Your Project ↗
+          </Link>
+          <Link href="#portfolio" className="btn-dark">
+            View Our Work
+          </Link>
         </div>
       </div>
 
-      {/* Scroll hint - pinned to bottom edge */}
-      <p
-        className="hidden md:block absolute bottom-12 right-10 z-10 font-mono text-[0.65rem] tracking-[0.15em] uppercase text-cream/65"
-        style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
-      >
-        Scroll to explore
-      </p>
+      <HeroVisual />
     </section>
   );
 }

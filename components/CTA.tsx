@@ -1,55 +1,34 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { Star } from "@/components/Art";
+import { site, whatsappUrl } from "@/lib/site";
 
 export default function CTA() {
-	return (
-		<section id='cta' className='bg-[#c73400] relative overflow-hidden'>
-			{/* Ghost text */}
-			<span
-				className='text-stroke-white-soft absolute right-[-40px] top-1/2 -translate-y-[52%] font-display font-black tracking-tightest leading-none pointer-events-none select-none whitespace-nowrap'
-				style={{ fontSize: '20vw' }}
-				aria-hidden
-			>
-				BUILD
-			</span>
-
-			<div className='max-w-[1240px] mx-auto px-10'>
-				<div className='grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-16 py-20 flex-wrap reveal'>
-					<h2
-						className='font-display font-extrabold tracking-tighter2 text-white leading-[0.95] relative z-10'
-						style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4rem)' }}
-					>
-						Your next product
-						<br />
-						starts with a
-						<br />
-						<em className='not-italic font-light opacity-80'>
-							conversation.
-						</em>
-					</h2>
-
-					<div className='relative z-10 flex flex-col gap-3.5 items-start lg:items-end'>
-						<p className='text-[0.9rem] text-white max-w-[260px] font-light leading-[1.65] lg:text-right'>
-							Whether you have a detailed spec or just a rough
-							idea — we'll help you figure out what to build and
-							how to win.
-						</p>
-						<Link
-							href='https://wa.me/254769622996?text=Hello!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20start%20a%20new%20project%20with%20you.'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] bg-white text-[#b52f06] font-bold text-[0.92rem] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-200 hover:bg-ink hover:text-white hover:-translate-y-0.5'
-						>
-							Start a Project Today ↗
-						</Link>
-						<Link
-							href='mailto:pragdev.softwares@gmail.com'
-							className='inline-flex items-center gap-2.5 px-7 py-[15px] rounded-[9px] border border-white/35 text-white font-semibold text-[0.92rem] transition-all duration-200 hover:bg-white/10 hover:-translate-y-0.5'
-						>
-							pragdev.softwares@gmail.com
-						</Link>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+  return (
+    <section id="cta" className="bg-ink px-6 md:px-10">
+      <div className="reveal relative mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-10 overflow-hidden rounded-3xl bg-[#c73400] p-9 md:p-14 lg:grid-cols-[1fr_auto]">
+        <Star className="pointer-events-none absolute -right-14 -top-14 h-72 w-72 text-white/[0.08]" />
+        <h2 className="section-title relative text-white">
+          Your next product starts with a{" "}
+          <span className="font-script text-[1.15em] font-semibold leading-none tracking-normal">conversation.</span>
+        </h2>
+        <div className="relative flex flex-col items-start gap-3 lg:items-end">
+          <p className="max-w-[300px] text-[0.95rem] font-light leading-[1.65] text-white lg:text-right">
+            Whether you have a detailed spec or just a rough idea, we&apos;ll
+            help you figure out what to build and how to win.
+          </p>
+          <Link
+            href={whatsappUrl("Hello! I saw your website and I'd like to start a new project with you.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-white"
+          >
+            Start a Project Today ↗
+          </Link>
+          <Link href={`mailto:${site.email}`} className="text-[0.9rem] text-white underline underline-offset-4">
+            {site.email}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
