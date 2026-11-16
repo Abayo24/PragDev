@@ -18,7 +18,7 @@ export const site = {
   city: "Nairobi",
   country: "Kenya",
   countryCode: "KE",
-  logo: "/pds-logo1.png",
+  logo: "/brand/pragdev-app-icon-512.png",
 };
 
 export function whatsappUrl(message: string) {

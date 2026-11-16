@@ -33,9 +33,16 @@ export default function Nav() {
         }`}
       >
         <div className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-2 no-underline">
-            <Image src="/logo-mark.png" alt="PragDev Softwares logo" width={49} height={30} priority />
-            <span className="text-[1.2rem] font-semibold tracking-[-0.03em] text-orange">PragDev</span>
+          {/* The logo file includes its own clear space, so pull it back to the content edge */}
+          <Link href="/" className="-ml-3 flex items-center no-underline">
+            <Image
+              src="/brand/pragdev-horizontal-reversed.svg"
+              alt="PragDev Softwares"
+              width={143}
+              height={52}
+              priority
+              unoptimized
+            />
           </Link>
 
           <ul className="hidden list-none items-center gap-1 lg:flex">

@@ -58,19 +58,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.1fr] gap-10 mb-14">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center mb-4">
-              <div className='mr-2.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105'>
-							<Image
-								src='/logo-mark.png'
-								alt='PragDev Softwares logo'
-								width={52}
-								height={32}
-								className='object-contain'
-							/>
-						</div>
-              <span className="text-[1.2rem] font-semibold tracking-[-0.03em] text-cream">
-                PragDev Softwares
-              </span>
+            <Link href="/" className="-ml-3.5 mb-3 inline-flex">
+              <Image
+                src="/brand/pragdev-horizontal-reversed.svg"
+                alt="PragDev Softwares"
+                width={176}
+                height={64}
+                unoptimized
+              />
             </Link>
             <p className="text-[0.88rem] text-cream/70 font-light leading-[1.75] max-w-[260px]">
               Website and app development company in Nairobi, Kenya, building
